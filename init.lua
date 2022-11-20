@@ -2,14 +2,15 @@ local vim = vim
 
 require("packer").startup(function(use)
 
+use 'wbthomason/packer.nvim'
+
 use 'Mofiqul/vscode.nvim'
 use 'neovim/nvim-lspconfig'
 use 'tanvirtin/monokai.nvim'
-use 'Mofiqul/vscode.nvim'
 -- Language Support
 use 'nvim-treesitter/nvim-treesitter'
 use {'neoclide/coc.nvim', branch='release'}
-use 'sheerun/vim-polyglot'
+-- use 'sheerun/vim-polyglot'
 -- File Browsing
 use 'nvim-lua/plenary.nvim'
 use {'nvim-telescope/telescope.nvim', tag='0.1.0'}
@@ -25,16 +26,17 @@ use 'vim-airline/vim-airline-themes'
 end)
 
 require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true
-    }
+	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = true
+	}
 }
 
 vim.cmd([[
 	
 	syntax on
 	set hlsearch
-	set termguicolors
 	colorscheme monokai_pro
 
 	set autoindent
@@ -52,6 +54,7 @@ vim.cmd([[
 -- ================================================================================
 vim.keymap.set("n", "<Leader>bd", "<cmd>bd!<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>bn", "<cmd>bn<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader><CR>", "<cmd>noh<CR>", {silent=true})
 
 -- ================================================================================
 -- [COC KEYBINDINGS]
@@ -68,40 +71,47 @@ vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
-vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
-vim.keymap.set("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-vim.keymap.set("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-vim.keymap.set("x", "<leader>a", "<Plug>(coc-codeaction-selected)", options)
-vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction)", options)
-vim.keymap.set("n", "<leader>qf", "<Plug>(coc-fix-current)", options)
-vim.keymap.set("n", "<leader>cl", "<Plug>(coc-codelens-action)", options)
-vim.keymap.set("n", "K", '<CMD>lua _G.show_documentation()<CR>', {silent = true})
+vim.keymap.set("n", "<Leader>rn", "<Plug>(coc-rename)", {silent = true})
+vim.keymap.set("x", "<Leader>f", "<Plug>(coc-format-selected)", {silent = true})
+vim.keymap.set("n", "<Leader>f", "<Plug>(coc-format-selected)", {silent = true})
+
+vim.keymap.set("i", "<C-l>", "<Plug>(coc-snippets-expand)", {silent = true})
+vim.keymap.set("x", "<Leader>x", "<Plug>(coc-convert-snippet)", {silent = true})
 
 function _G.show_documentation()
-    local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-        vim.api.nvim_command('h ' .. cw)
-    elseif vim.api.nvim_eval('coc#rpc#ready()') then
-        vim.fn.CocActionAsync('doHover')
-    else
-        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-    end
+	local cw = vim.fn.expand('<cword>')
+	if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+		vim.api.nvim_command('h ' .. cw)
+	elseif vim.api.nvim_eval('coc#rpc#ready()') then
+		vim.fn.CocActionAsync('doHover')
+	else
+		vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+	end
 end
 
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
+	group = "CocGroup",
+	command = "silent call CocActionAsync('highlight')",
+	desc = "Highlight symbol under cursor on CursorHold"
 })
 
-local options = {silent = true, nowait = true, expr = true}
+options = {silent = true, nowait = true}
+
+vim.keymap.set("x", "<Leader>a", "<Plug>(coc-codeaction-selected)", options)
+vim.keymap.set("n", "<Leader>ac", "<Plug>(coc-codeaction)", options)
+vim.keymap.set("n", "<Leader>qf", "<Plug>(coc-fix-current)", options)
+vim.keymap.set("n", "<Leader>cl", "<Plug>(coc-codelens-action)", options)
+vim.keymap.set("n", "K", '<CMD>lua _G.show_documentation()<CR>', {silent = true})
+
+options = {silent = true, nowait = true, expr = true}
+
 vim.keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', options)
 vim.keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', options)
 vim.keymap.set("i", "<C-f>",
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', options)
+	   'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', options)
 vim.keymap.set("i", "<C-b>",
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', options)
+	   'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', options)
 vim.keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', options)
 vim.keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', options)
 -- ================================================================================
@@ -118,5 +128,5 @@ vim.keymap.set("n", "<Space>fb", "<cmd>lua require('telescope').extensions.file_
 -- ================================================================================
 -- [MULTILINE KEYBINDINGS]
 -- ================================================================================
-vim.keymap.set("n", "<C-J>", "<Plug>(VM-Add-Cursor-Down)")
-vim.keymap.set("n", "<C-K>", "<Plug>(VM-Add-Cursor-Up)")
+vim.keymap.set("n", "<C-j>", "<Plug>(VM-Add-Cursor-Down)")
+vim.keymap.set("n", "<C-k>", "<Plug>(VM-Add-Cursor-Up)")

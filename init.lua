@@ -16,12 +16,15 @@ use 'nvim-lua/plenary.nvim'
 use {'nvim-telescope/telescope.nvim', tag='0.1.0'}
 use 'nvim-telescope/telescope-file-browser.nvim'
 -- Typing
-use 'jiangmiao/auto-pairs'
+--use 'jiangmiao/auto-pairs'
+use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 use {'mg979/vim-visual-multi', branch='master'}
 -- Airline
 use 'vim-airline/vim-airline'
 use 'vim-airline/vim-airline-themes'
-
 
 end)
 
@@ -71,6 +74,7 @@ vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
+vim.keymap.set("i", "<C-s>", "<cmd>call CocActionAsync(\"showSignatureHelp\")<CR>", {silent = true})
 vim.keymap.set("n", "<Leader>rn", "<Plug>(coc-rename)", {silent = true})
 vim.keymap.set("x", "<Leader>f", "<Plug>(coc-format-selected)", {silent = true})
 vim.keymap.set("n", "<Leader>f", "<Plug>(coc-format-selected)", {silent = true})

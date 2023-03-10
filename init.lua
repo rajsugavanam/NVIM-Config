@@ -6,7 +6,7 @@ use 'wbthomason/packer.nvim'
 
 use 'Mofiqul/vscode.nvim'
 use 'neovim/nvim-lspconfig'
-use 'tanvirtin/monokai.nvim'
+use 'loctvl842/monokai-pro.nvim'
 -- Language Support
 use 'nvim-treesitter/nvim-treesitter'
 use {'neoclide/coc.nvim', branch='release'}
@@ -16,11 +16,7 @@ use 'nvim-lua/plenary.nvim'
 use {'nvim-telescope/telescope.nvim', tag='0.1.0'}
 use 'nvim-telescope/telescope-file-browser.nvim'
 -- Typing
---use 'jiangmiao/auto-pairs'
-use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
+use 'jiangmiao/auto-pairs'
 use {'mg979/vim-visual-multi', branch='master'}
 -- Airline
 use 'vim-airline/vim-airline'
@@ -36,11 +32,35 @@ require'nvim-treesitter.configs'.setup {
 	}
 }
 
+require("monokai-pro").setup {
+	transparent_background = false,
+	terminal_colors = true,
+	devicons = true,
+	italic_comments = true,
+	filter = "spectrum",
+	background_clear = {
+	    "toggleterm",
+	    "telescope",
+	    "which-key",
+	    "renamer"
+	},
+	plugins = {
+	    bufferline = {
+		    underline_selected = false,
+		    underline_visible = false,
+	    },
+	    indent_blankline = {
+		    context_highlight = "default",
+	    },
+	    override = function(c) end
+	}
+}
+
 vim.cmd([[
 	
 	syntax on
 	set hlsearch
-	colorscheme monokai_pro
+	colorscheme monokai-pro
 
 	set autoindent
 	set tabstop=4

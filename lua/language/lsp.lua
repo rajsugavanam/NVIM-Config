@@ -1,4 +1,5 @@
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
+-- require("language.settings.nativelsp")
 
-lspconfig.pyright.setup{}
-lspconfig.java.setup{}
+-- lspconfig.pyright.setup{}
+-- lspconfig.java.setup{}

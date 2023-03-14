@@ -3,11 +3,14 @@ require("packer").startup(function(use)
 use 'wbthomason/packer.nvim'
 
 use 'Mofiqul/vscode.nvim'
-use 'neovim/nvim-lspconfig'
 use 'loctvl842/monokai-pro.nvim'
 -- Language Support
 use 'nvim-treesitter/nvim-treesitter'
-use {'neoclide/coc.nvim', branch='release'}
+use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
+use 'ms-jpq/coq.artifacts'
+use 'ms-jpq/coq.thirdparty'
+use 'neovim/nvim-lspconfig'
+-- use {'neoclide/coc.nvim', branch='release'}
 -- Visual
 use 'yggdroot/indentline'
 use 'RRethy/vim-illuminate'
@@ -30,7 +33,7 @@ use 'nvim-telescope/telescope-file-browser.nvim'
 use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",

@@ -14,5 +14,7 @@ vim.cmd([[
 	let g:airline_statusline_ontop=0
 
 	set noshowmode
+
+	set completeopt-=preview
 ]])
 --now i don't get disgusting --INSERT-- text at the bottom

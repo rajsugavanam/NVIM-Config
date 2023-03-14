@@ -10,6 +10,7 @@ use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
 use 'ms-jpq/coq.artifacts'
 use 'ms-jpq/coq.thirdparty'
 use 'neovim/nvim-lspconfig'
+use 'mfussenegger/nvim-jdtls'
 -- use {'neoclide/coc.nvim', branch='release'}
 -- Visual
 use 'yggdroot/indentline'

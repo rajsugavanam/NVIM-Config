@@ -8,27 +8,24 @@ local keybindings = {}
 vim.keymap.set("n", "<Leader>bd", "<cmd>bd!<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>bn", "<cmd>bn<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader><CR>", "<cmd>noh<CR>", {silent=true})
-
 -- ================================================================================
 -- [LSP KEYBINDINGS]
 -- ================================================================================
 -- IntelliSense, etc
-
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-function attach(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  -- completion triggered by <C-x><C-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+vim.keymap.set('i', '<Esc>', [[pumvisible() ? "<C-e><Esc>" : "<Esc>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<C-c>', [[pumvisible() ? "<C-e><C-c>" : "<C-c>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<Tab>', [[pumvisible() ? "<C-n>" : "<Tab>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "<C-p>" : "<BS>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<cr>',  "v:lua.UtilsCR()", {expr = true, noremap = true})
+
+function keybindings.attached_binds(bufnr)
+	local bufopts = { noremap=true, silent=true, buffer=bufnr }
  	vim.keymap.set('i', '<C-space>',  "<C-x><C-o>", bufopts)
  	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
  	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -48,8 +45,18 @@ function attach(client, bufnr)
 	end, bufopts)
 end
 
-local options = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-vim.keymap.set('i', '<CR>',  "v:lua.Npairs.autopairs_cr()", options)
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+function keybindings.attach(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  -- completion triggered by <C-x><C-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  keybindings.attached_binds(bufnr)
+end
+
+-- local options = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 -- vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : "<TAB>"', options)
 -- vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-d>"]], options)
 -- vim.keymap.set("i", "<cr>", 'coc#pum#visible() ? coc#pum#confirm() : v:lua.Npairs.autopairs_cr()', options)

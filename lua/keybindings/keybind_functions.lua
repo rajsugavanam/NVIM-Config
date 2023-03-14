@@ -16,3 +16,15 @@ function ConfirmComplete()
 		return Npairs.autopairs_cr()
 	end
 end
+
+function UtilsCR()
+  if vim.fn.pumvisible() ~= 0 then
+    if vim.fn.complete_info({ 'selected' }).selected ~= -1 then
+      return Npairs.esc('<c-y>')
+    else
+      return Npairs.esc('<c-e>') .. Npairs.autopairs_cr()
+    end
+  else
+    return Npairs.autopairs_cr()
+  end
+end

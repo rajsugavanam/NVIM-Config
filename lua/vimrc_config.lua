@@ -16,5 +16,6 @@ vim.cmd([[
 	set noshowmode
 
 	set completeopt-=preview
+
 ]])
 --now i don't get disgusting --INSERT-- text at the bottom

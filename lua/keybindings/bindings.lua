@@ -5,8 +5,8 @@ local keybindings = {}
 -- ================================================================================
 -- [GENERAL KEYBINDINGS]
 -- ================================================================================
-vim.keymap.set("n", "<Leader>bd", "<cmd>bd!<CR>", {noremap=true})
-vim.keymap.set("n", "<Leader>bn", "<cmd>bn<CR>", {noremap=true})
+-- vim.keymap.set("n", "<Leader>bd", "<cmd>bd!<CR>", {noremap=true})
+-- vim.keymap.set("n", "<Leader>bn", "<cmd>bn<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader><CR>", "<cmd>noh<CR>", {silent=true})
 -- ================================================================================
 -- [LSP KEYBINDINGS]

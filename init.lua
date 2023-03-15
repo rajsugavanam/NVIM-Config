@@ -10,3 +10,6 @@ require("treesitterconfig")
 require("vimrc_config")
 
 require("keybindings.bindings")
+
+require("barbar.barbarconfig")
+require("presence.presenceconfig")

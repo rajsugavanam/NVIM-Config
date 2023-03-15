@@ -10,7 +10,7 @@ function ShowDocumentation()
 end
 
 function ConfirmComplete()
-	if vim.fn.pumvisible() == 1 then
+	if vim.fn.pumvisible() ~= 0 then
 		return "<C-x><C-o>"
 	else
 		return Npairs.autopairs_cr()

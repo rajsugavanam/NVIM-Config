@@ -30,7 +30,7 @@ use({
 -- File Browsing
 use 'nvim-lua/plenary.nvim'
 use {'nvim-telescope/telescope.nvim', tag='0.1.0'}
-use 'nvim-telescope/telescope-file-browser.nvim'
+-- use 'nvim-telescope/telescope-file-browser.nvim'
 use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -40,6 +40,7 @@ use {
       "MunifTanjim/nui.nvim",
     }
   }
+use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 -- Typing
 use 'windwp/nvim-autopairs'
 use 'tpope/vim-surround'
@@ -51,5 +52,7 @@ use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
+-- Social
+use "andweeb/presence.nvim"
 
 end)

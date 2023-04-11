@@ -6,9 +6,21 @@ use 'Mofiqul/vscode.nvim'
 use 'loctvl842/monokai-pro.nvim'
 -- Language Support
 use 'nvim-treesitter/nvim-treesitter'
-use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
-use 'ms-jpq/coq.artifacts'
-use 'ms-jpq/coq.thirdparty'
+require("nvim-treesitter.install").prefer_git = false
+require("nvim-treesitter.install").compilers = {"clang", "gcc"}
+
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
+use 'hrsh7th/nvim-cmp'
+
+use 'hrsh7th/cmp-vsnip'
+use 'hrsh7th/vim-vsnip'
+
+-- use {'ms-jpq/coq_nvim', branch = 'coq'}
+-- use 'ms-jpq/coq.artifacts'
+-- use 'ms-jpq/coq.thirdparty'
 use 'neovim/nvim-lspconfig'
 use 'mfussenegger/nvim-jdtls'
 -- use {'neoclide/coc.nvim', branch='release'}

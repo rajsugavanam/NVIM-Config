@@ -124,26 +124,26 @@ vim.keymap.set("n", "<A-Up>", "<Plug>(VM-Add-Cursor-Up)")
 -- ================================================================================
 local map = vim.api.nvim_set_keymap
 -- Move to previous/next
-map('n', '≤', '<Cmd>BufferPrevious<CR>', opts) -- alt comma but for mac
-map('n', '≥', '<Cmd>BufferNext<CR>', opts) -- alt period
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts) -- alt comma but for mac
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts) -- alt period
 -- Re-order to previous/next
-map('n', '¯', '<Cmd>BufferMovePrevious<CR>', opts) -- alt < || alt shft ,
-map('n', '˘', '<Cmd>BufferMoveNext<CR>', opts) -- alt >
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts) -- alt < || alt shft ,
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts) -- alt >
 -- Goto buffer in position...
-map('n', '¡', '<Cmd>BufferGoto 1<CR>', opts) -- alt 1
-map('n', '™', '<Cmd>BufferGoto 2<CR>', opts) -- alt 2
-map('n', '£', '<Cmd>BufferGoto 3<CR>', opts) -- alt 3
-map('n', '¢', '<Cmd>BufferGoto 4<CR>', opts) -- alt 4
-map('n', '∞', '<Cmd>BufferGoto 5<CR>', opts) -- alt 5
-map('n', '§', '<Cmd>BufferGoto 6<CR>', opts) -- alt 6
-map('n', '¶', '<Cmd>BufferGoto 7<CR>', opts) -- alt 7
-map('n', '•', '<Cmd>BufferGoto 8<CR>', opts) -- alt 8
-map('n', 'ª', '<Cmd>BufferGoto 9<CR>', opts) -- alt 9
-map('n', 'º', '<Cmd>BufferLast<CR>', opts) -- alt 0
+map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts) -- alt 1
+map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts) -- alt 2
+map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts) -- alt 3
+map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts) -- alt 4
+map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts) -- alt 5
+map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts) -- alt 6
+map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts) -- alt 7
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts) -- alt 8
+map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts) -- alt 9
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts) -- alt 0
 -- Pin/unpin buffer
-map('n', 'π', '<Cmd>BufferPin<CR>', opts) -- alt p
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts) -- alt p
 -- Close buffer
-map('n', 'ç', '<Cmd>BufferClose<CR>', opts) -- alt c
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts) -- alt c
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands

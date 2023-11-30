@@ -6,13 +6,13 @@ vim.cmd([[
         hi Conceal guifg=#ffff00 guibg=#00000000
     endfunction
 
-    " augroup tex
-    "     autocmd!
-    "     autocmd InsertEnter *.tex set conceallevel=0
-    "     autocmd InsertLeave *.tex set conceallevel=0 " | call HighlightTex()
-    "     autocmd BufEnter *.tex set conceallevel=0
-    "     " autocmd BufEnter *.tex call HighlightTex()
-    " augroup END
+    augroup conceal
+        autocmd!
+        autocmd InsertEnter *.* set conceallevel=0
+        autocmd InsertLeave *.* set conceallevel=0 " | call HighlightTex()
+        autocmd BufEnter *.* set conceallevel=0
+        " autocmd BufEnter *.tex call HighlightTex()
+    augroup END
 
     let g:vimtex_syntax_conceal_disable = 1
 

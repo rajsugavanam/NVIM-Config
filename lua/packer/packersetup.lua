@@ -15,8 +15,9 @@ use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/nvim-cmp'
 
-use 'hrsh7th/cmp-vsnip'
-use 'hrsh7th/vim-vsnip'
+use "SirVer/ultisnips"
+use "quangnguyen30192/cmp-nvim-ultisnips"
+-- *INSTALL PYNVIM*
 
 -- use {'ms-jpq/coq_nvim', branch = 'coq'}
 -- use 'ms-jpq/coq.artifacts'
@@ -24,6 +25,8 @@ use 'hrsh7th/vim-vsnip'
 use 'neovim/nvim-lspconfig'
 use 'mfussenegger/nvim-jdtls'
 -- use {'neoclide/coc.nvim', branch='release'}
+use "lervag/vimtex"
+
 -- Visual
 use 'yggdroot/indentline'
 use 'RRethy/vim-illuminate'
@@ -41,7 +44,7 @@ use({
 })
 -- File Browsing
 use 'nvim-lua/plenary.nvim'
-use {'nvim-telescope/telescope.nvim', tag='0.1.0'}
+use {'nvim-telescope/telescope.nvim', tag='0.1.4'}
 -- use 'nvim-telescope/telescope-file-browser.nvim'
 use {
   "nvim-neo-tree/neo-tree.nvim",

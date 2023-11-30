@@ -1,6 +1,6 @@
 vim.cmd([[
 	
-	syntax on
+	syntax enable
 	set hlsearch
 	colorscheme monokai-pro
 

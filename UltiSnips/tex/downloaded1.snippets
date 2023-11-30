@@ -415,6 +415,11 @@ snippet mcal "mathcal" i
 \mathcal{$1}$0
 endsnippet
 
+context "math()"
+snippet mbf "mathbf" i
+\mathbf{$1}
+endsnippet
+
 snippet lll "l" i
 \ell
 endsnippet
@@ -601,7 +606,7 @@ snippet bigfun "Big function" i
 endsnippet
 
 snippet cvec "column vector" i
-\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
+\begin{bmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{bmatrix}
 endsnippet
 
 priority 10

@@ -1,5 +1,3 @@
-local vim = vim
-
 require("packer.packersetup")
 require("monokaipro_colorscheme")
 require("vimrc_config")

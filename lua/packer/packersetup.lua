@@ -19,12 +19,8 @@ use "SirVer/ultisnips"
 use "quangnguyen30192/cmp-nvim-ultisnips"
 -- *INSTALL PYNVIM*
 
--- use {'ms-jpq/coq_nvim', branch = 'coq'}
--- use 'ms-jpq/coq.artifacts'
--- use 'ms-jpq/coq.thirdparty'
 use 'neovim/nvim-lspconfig'
 use 'mfussenegger/nvim-jdtls'
--- use {'neoclide/coc.nvim', branch='release'}
 use "lervag/vimtex"
 
 -- Visual

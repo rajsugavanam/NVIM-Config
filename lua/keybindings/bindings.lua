@@ -18,11 +18,11 @@ vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
-vim.keymap.set('i', '<Esc>', [[pumvisible() ? "<C-e><Esc>" : "<Esc>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<C-c>', [[pumvisible() ? "<C-e><C-c>" : "<C-c>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<Tab>', [[pumvisible() ? "<C-n>" : "<Tab>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "<C-p>" : "<BS>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<cr>',  "v:lua.UtilsCR()", {expr = true, noremap = true})
+-- vim.keymap.set('i', '<Esc>', [[pumvisible() ? "<C-e><Esc>" : "<Esc>"]], { expr = true, noremap = true })
+-- vim.keymap.set('i', '<C-c>', [[pumvisible() ? "<C-e><C-c>" : "<C-c>"]], { expr = true, noremap = true })
+-- vim.keymap.set('i', '<Tab>', [[pumvisible() ? "<C-n>" : "<Tab>"]], { expr = true, noremap = true })
+-- vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "<C-p>" : "<BS>"]], { expr = true, noremap = true })
+-- vim.keymap.set('i', '<cr>',  "v:lua.UtilsCR()", {expr = true, noremap = true})
 
 function keybindings.attached_binds(bufnr)
 	local bufopts = { noremap=true, silent=true, buffer=bufnr }

@@ -10,3 +10,6 @@
 My goal is to keep this configuration relatively simple. Some inconsistencies may arise
 due to adding language support, but I want to avoid needing to memorize too many external
 keybinds.
+
+To install, first delete the `nvim` folder in `~/.config/nvim`.
+Then run `git clone https://github.com/rajsugavanam/NVIM-Config nvim`.

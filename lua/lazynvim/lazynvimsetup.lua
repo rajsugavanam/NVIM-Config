@@ -2,8 +2,12 @@ require("lazy").setup({
 
 'wbthomason/packer.nvim',
 
-'Mofiqul/vscode.nvim',
-'loctvl842/monokai-pro.nvim',
+-- 'Mofiqul/vscode.nvim',
+-- 'loctvl842/monokai-pro.nvim',
+-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+-- "wilmanbarrios/palenight.nvim",
+-- "rose-pine/neovim",
+"morhetz/gruvbox",
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 -- require("nvim-treesitter.install").prefer_git == false,

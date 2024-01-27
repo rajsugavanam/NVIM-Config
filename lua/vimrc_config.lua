@@ -18,7 +18,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme gruvbox
+	colorscheme monokai-pro
 
 	set tabstop=4
 	set shiftwidth=4

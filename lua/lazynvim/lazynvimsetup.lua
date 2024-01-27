@@ -3,7 +3,7 @@ require("lazy").setup({
 'wbthomason/packer.nvim',
 
 -- 'Mofiqul/vscode.nvim',
--- 'loctvl842/monokai-pro.nvim',
+'loctvl842/monokai-pro.nvim',
 -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 -- "wilmanbarrios/palenight.nvim",
 -- "rose-pine/neovim",

@@ -57,7 +57,11 @@ require("lazy").setup({
 
 {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 -- Typing
-'windwp/nvim-autopairs',
+{
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+},
 'tpope/vim-surround',
 'majutsushi/tagbar',
 'tpope/vim-commentary',

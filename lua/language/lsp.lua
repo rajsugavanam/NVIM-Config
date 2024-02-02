@@ -7,6 +7,7 @@ local servers = {
 	"lua_ls",
 	"clangd",
 	"cmake",
+    "texlab",
 }
 
 for _, lsp in ipairs(servers) do

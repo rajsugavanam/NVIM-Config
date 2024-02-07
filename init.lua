@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazynvim.lazynvimsetup")
-require("monokaipro_colorscheme")
+-- require("monokaipro_colorscheme")
 -- require("catppuccin_colorscheme")
 require("vimrc_config")
 

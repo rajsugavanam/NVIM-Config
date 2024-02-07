@@ -3,7 +3,13 @@ require("lazy").setup({
 'wbthomason/packer.nvim',
 
 -- 'Mofiqul/vscode.nvim',
-'loctvl842/monokai-pro.nvim',
+-- 'loctvl842/monokai-pro.nvim',
+{
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+},
 -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 -- "wilmanbarrios/palenight.nvim",
 -- "rose-pine/neovim",
@@ -40,6 +46,10 @@ require("lazy").setup({
   config = function()
 	require('barbecue').setup()
   end
+},
+{
+    "SmiteshP/nvim-navbuddy",
+    opts = { lsp = { auto_attach = true } },
 },
 -- File Browsing
 'nvim-lua/plenary.nvim',

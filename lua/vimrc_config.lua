@@ -18,7 +18,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme monokai-pro
+	colorscheme tokyonight-night
 
 	set tabstop=4
 	set shiftwidth=4

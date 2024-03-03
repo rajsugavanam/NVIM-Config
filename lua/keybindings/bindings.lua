@@ -63,8 +63,23 @@ vim.keymap.set("n", "<Leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<Leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<Leader>h", builtin.keymaps, {})
 -- File Browser
-vim.keymap.set("n", "<Space>fb", "<cmd>Neotree toggle<CR>", {noremap = true})
-vim.keymap.set("n", "<Leader>fb", "<cmd>Neotree buffers toggle<CR>", {})
+-- vim.keymap.set("n", "<Space>fb", "<cmd>Neotree toggle<CR>", {noremap = true})
+-- vim.keymap.set("n", "<Leader>fb", "<cmd>Neotree buffers toggle<CR>", {})
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>fb",
+  ":Telescope buffers<CR>",
+  { noremap = true }
+)
+
 -- ================================================================================
 -- [MULTILINE KEYBINDINGS]
 -- ================================================================================

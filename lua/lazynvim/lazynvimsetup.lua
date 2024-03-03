@@ -33,6 +33,8 @@ require("lazy").setup({
 'mfussenegger/nvim-jdtls',
 "lervag/vimtex",
 
+'mfussenegger/nvim-dap',
+
 -- Visual
 'yggdroot/indentline',
 'RRethy/vim-illuminate',
@@ -49,21 +51,34 @@ require("lazy").setup({
 },
 {
     "SmiteshP/nvim-navbuddy",
+    dependencies = {
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim"
+    },
     opts = { lsp = { auto_attach = true } },
 },
 -- File Browsing
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
--- 'nvim-telescope/telescope-file-browser.nvim'
+"BurntSushi/ripgrep",
+
 {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-    }
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+        require("telescope").load_extension "file_browser"
+    end
 },
+
+-- {
+--     "nvim-neo-tree/neo-tree.nvim",
+--     branch = "v2.x",
+--     dependencies = {
+--         "nvim-lua/plenary.nvim",
+--         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+--         "MunifTanjim/nui.nvim",
+--     }
+-- },
 
 {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 -- Typing

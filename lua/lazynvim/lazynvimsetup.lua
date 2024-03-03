@@ -60,7 +60,6 @@ require("lazy").setup({
 -- File Browsing
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
-"BurntSushi/ripgrep",
 
 {
     "nvim-telescope/telescope-file-browser.nvim",

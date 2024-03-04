@@ -1,5 +1,4 @@
 require('lualine').setup {
-	theme = "monokai-pro",
 	options = {
 		icons_enabled = true,
 		theme = 'auto',

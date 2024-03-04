@@ -89,7 +89,6 @@ require("lazy").setup({
 'tpope/vim-surround',
 'majutsushi/tagbar',
 'tpope/vim-commentary',
-{'mg979/vim-visual-multi', branch='master'},
 -- Airline
 {
   'nvim-lualine/lualine.nvim',

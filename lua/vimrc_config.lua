@@ -6,14 +6,6 @@ vim.cmd([[
         hi Conceal guifg=#ffff00 guibg=#00000000
     endfunction
 
-    augroup conceal
-        autocmd!
-        autocmd InsertEnter *.* set conceallevel=0
-        autocmd InsertLeave *.* set conceallevel=0 " | call HighlightTex()
-        autocmd BufEnter *.* set conceallevel=0
-        " autocmd BufEnter *.tex call HighlightTex()
-    augroup END
-
     let g:vimtex_syntax_conceal_disable = 1
 
 	syntax enable
@@ -23,9 +15,12 @@ vim.cmd([[
 	set tabstop=4
 	set shiftwidth=4
 	set softtabstop=4
+    set smarttab
 	set expandtab
 
-	set number
+    set cursorline
+    set number
+	set relativenumber
 	
 	let g:airline_powerline_fonts = 1
 	let g:airline_theme='wombat'
@@ -36,6 +31,8 @@ vim.cmd([[
 	set completeopt-=preview
 
     let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " snippet dir
+
+    set autoread
 
 ]])
 --now i don't get disgusting --INSERT-- text at the bottom

@@ -18,6 +18,7 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<Leader>n', '<Cmd>Nav<CR>', opts)
 
 -- vim.keymap.set('i', '<CR>',  "v:lua.UtilsCR()", {expr = true, noremap = true})
 
@@ -80,11 +81,6 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
--- ================================================================================
--- [MULTILINE KEYBINDINGS]
--- ================================================================================
-vim.keymap.set("n", "<A-Down>", "<Plug>(VM-Add-Cursor-Down)")
-vim.keymap.set("n", "<A-Up>", "<Plug>(VM-Add-Cursor-Up)")
 -- ================================================================================
 -- [BARBAR KEYBINDINGS]
 -- ================================================================================

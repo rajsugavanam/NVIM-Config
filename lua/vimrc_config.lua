@@ -7,6 +7,7 @@ vim.cmd([[
     endfunction
 
     let g:vimtex_syntax_conceal_disable = 1
+    set conceallevel=0
 
 	syntax enable
 	set hlsearch
@@ -31,7 +32,9 @@ vim.cmd([[
 	set completeopt-=preview
 
     let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " snippet dir
-
+    let g:UltiSnipsExpandTrigger="<Tab>"
+    let g:UltiSnipsJumpForwardTrigger="<C-f>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-b>"
     set autoread
 
 ]])

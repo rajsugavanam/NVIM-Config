@@ -11,7 +11,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme tokyonight-night
+	colorscheme tokyonight-moon
 
 	set tabstop=4
 	set shiftwidth=4

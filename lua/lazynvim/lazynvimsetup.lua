@@ -24,6 +24,7 @@ require("lazy").setup({
 'hrsh7th/cmp-path',
 'hrsh7th/cmp-cmdline',
 'hrsh7th/nvim-cmp',
+'williamboman/mason.nvim',
 
 "SirVer/ultisnips",
 "quangnguyen30192/cmp-nvim-ultisnips",
@@ -96,5 +97,7 @@ require("lazy").setup({
 },
 -- Social
 "andweeb/presence.nvim"
+-- "leonardssh/coc-discord-rpc",
+-- {"neoclide/coc.nvim", branch="release"}
 
 })

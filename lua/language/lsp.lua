@@ -1,15 +1,25 @@
 local lspconfig = require("lspconfig")
 -- require("language.settings.nativelsp")
 local keybindings = require("keybindings.bindings")
-require("mason").setup()
 
 local servers = {
 	"pyright",
 	"lua_ls",
 	-- "clangd",
 	"cmake",
+    "arduino_language_server",
     "texlab",
+    "biome",
+    "html",
+    "cssls",
 }
+
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = servers,
+}
+require("lint")
+require("mason-nvim-lint").setup()
 
 
 -- capabilities: to work with nvim-cmp.
@@ -44,6 +54,20 @@ function SetupSourcekit()
     }
 end
 
+function SetupArduinoLS()
+    local MY_FQBN = "arduino:avr:uno"
+    lspconfig["arduino_language_server"].setup {
+        capabilities = CAPABILITIES,
+        on_attach = ON_ATTACH,
+        cmd = {
+            "arduino-language-server",
+            "-cli-config", "/opt/homebrew/bin/arduino-cli",
+            "-fqbn",
+            MY_FQBN
+        },
+    }
+end
+
 function SetupAllLSP()
 
     for _, lsp in ipairs(servers) do
@@ -51,6 +75,7 @@ function SetupAllLSP()
     end
 
     SetupSourcekit()
+    SetupArduinoLS()
 
 end
 

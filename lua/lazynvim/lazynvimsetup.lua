@@ -25,6 +25,9 @@ require("lazy").setup({
 'hrsh7th/cmp-cmdline',
 'hrsh7th/nvim-cmp',
 'williamboman/mason.nvim',
+'williamboman/mason-lspconfig.nvim',
+'rshkarin/mason-nvim-lint',
+"mfussenegger/nvim-lint",
 
 "SirVer/ultisnips",
 "quangnguyen30192/cmp-nvim-ultisnips",

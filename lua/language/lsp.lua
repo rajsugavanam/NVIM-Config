@@ -18,8 +18,6 @@ require("mason").setup()
 require("mason-lspconfig").setup {
     ensure_installed = servers,
 }
-require("lint")
-require("mason-nvim-lint").setup()
 
 
 -- capabilities: to work with nvim-cmp.

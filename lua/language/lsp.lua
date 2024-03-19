@@ -5,9 +5,10 @@ local keybindings = require("keybindings.bindings")
 local servers = {
 	"pyright",
 	"lua_ls",
-	-- "clangd",
+	"clangd",
 	"cmake",
     "arduino_language_server",
+    "asm-lsp",
     "texlab",
     "biome",
     "html",

@@ -8,7 +8,7 @@ local servers = {
 	"clangd",
 	"cmake",
     "arduino_language_server",
-    "asm-lsp",
+    "asm_lsp",
     "texlab",
     "biome",
     "html",

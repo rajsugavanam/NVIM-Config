@@ -8,7 +8,6 @@ local servers = {
 	"clangd",
 	"cmake",
     "arduino_language_server",
-    "asm_lsp",
     "texlab",
     "biome",
     "html",
@@ -31,7 +30,8 @@ local ON_ATTACH = keybindings.attach
 function SetupLSP(lsp)
     lspconfig[lsp].setup {
         capabilities = CAPABILITIES,
-        on_attach = ON_ATTACH
+        on_attach = ON_ATTACH,
+        single_file_support = true,
     }
 end
 
@@ -40,6 +40,7 @@ function SetupJava()
 	require("jdtls").start_or_attach {
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
+        single_file_support = true,
 		cmd = { "/usr/local/bin/jdt-language-server-1.20.0/bin/jdtls" },
 		root_dir = vim.fs.dirname(vim.fs.find({"gradlew", ".git", "mvnw"}, { upward = true })[1]),
 	}
@@ -49,6 +50,8 @@ function SetupSourcekit()
     lspconfig["sourcekit"].setup {
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
+        single_file_support = true,
+        filetypes = { "swift" },
         cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
     }
 end
@@ -58,6 +61,7 @@ function SetupArduinoLS()
     lspconfig["arduino_language_server"].setup {
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
+        single_file_support = true,
         cmd = {
             "arduino-language-server",
             "-cli-config", "/opt/homebrew/bin/arduino-cli",

@@ -99,7 +99,10 @@ require("lazy").setup({
   dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
-"andweeb/presence.nvim"
+-- "andweeb/presence.nvim"
+{
+    'IogaMaster/neocord',
+}
 -- "leonardssh/coc-discord-rpc",
 -- {"neoclide/coc.nvim", branch="release"}
 

@@ -43,21 +43,11 @@ function keybindings.attached_binds(bufnr)
     end, bufopts)
 end
 
-function keybindings.changeIndentation()
-    vim.o.tabstop=4 -- LSPs can reset tab stuff
-    vim.o.shiftwidth=4
-	vim.o.softtabstop=4
-    vim.o.smarttab=true
-	vim.o.expandtab=true
-end
-keybindings.changeIndentation() -- Set proper indentation even if there's no LSP
-
 function keybindings.attach(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   -- completion triggered by <C-x><C-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     keybindings.attached_binds(bufnr)
-    keybindings.changeIndentation()
 end
 
 

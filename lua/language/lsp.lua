@@ -8,8 +8,8 @@ local servers = {
 	"clangd",
 	"cmake",
     "arduino_language_server",
+    "angularls",
     "texlab",
-    "biome",
     "html",
     "cssls",
 }

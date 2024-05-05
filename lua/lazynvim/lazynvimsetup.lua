@@ -12,8 +12,8 @@ require("lazy").setup({
 },
 -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 -- "wilmanbarrios/palenight.nvim",
--- "rose-pine/neovim",
-"morhetz/gruvbox",
+-- "morhetz/gruvbox",
+{ "rose-pine/neovim", name = "rose-pine" },
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 -- require("nvim-treesitter.install").prefer_git == false,

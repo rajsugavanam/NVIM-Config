@@ -11,12 +11,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.editorconfig = false
+-- HOLY SHIT THANK YOU FOR DISABLING TYPESCRIPT TWO-SPACE!!!!
+
 require("lazynvim.lazynvimsetup")
 require("vimrc_config")
 
 require("pairsconfig")
 require("cmp.cmpconfig")
+
 require("language.lsp")
+
 require("lualineconfig")
 require("treesitterconfig")
 

@@ -12,6 +12,8 @@ local servers = {
     "texlab",
     "html",
     "cssls",
+    "jdtls",
+    "tsserver"
 }
 
 require("mason").setup()
@@ -27,23 +29,31 @@ require("mason-lspconfig").setup {
 local CAPABILITIES = require("cmp_nvim_lsp").default_capabilities()
 local ON_ATTACH = keybindings.attach
 
+local function extraneous(lsp)
+    return
+        (lsp == "jdtls")
+        -- || ...
+end
+
 function SetupLSP(lsp)
+    if (extraneous(lsp)) then
+        return
+    end
     lspconfig[lsp].setup {
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
-        single_file_support = true,
+        single_file_support = false,
     }
 end
 
 -- called by the java language server automagically
 function SetupJava()
-	require("jdtls").start_or_attach {
+    require("jdtls").start_or_attach {
+        cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+        root_dir = vim.fs.dirname(vim.fs.find({"gradlew", ".git", "mvnw"}, { upward = true })[1]),
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
-        single_file_support = true,
-		cmd = { "/usr/local/bin/jdt-language-server-1.20.0/bin/jdtls" },
-		root_dir = vim.fs.dirname(vim.fs.find({"gradlew", ".git", "mvnw"}, { upward = true })[1]),
-	}
+    }
 end
 
 function SetupSourcekit()

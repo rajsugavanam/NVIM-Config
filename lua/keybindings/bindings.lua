@@ -5,8 +5,6 @@ local keybindings = {}
 -- ================================================================================
 -- [GENERAL KEYBINDINGS]
 -- ================================================================================
--- vim.keymap.set("n", "<Leader>bd", "<cmd>bd!<CR>", {noremap=true})
--- vim.keymap.set("n", "<Leader>bn", "<cmd>bn<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader><CR>", "<cmd>noh<CR>", {silent=true})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {silent=true})
 -- ================================================================================
@@ -15,24 +13,27 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {silent=true})
 -- IntelliSense, etc
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
+-- vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '[g', "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+vim.keymap.set('n', ']g', "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-vim.keymap.set('n', '<Leader>n', '<Cmd>Nav<CR>', opts)
-
--- vim.keymap.set('i', '<CR>',  "v:lua.UtilsCR()", {expr = true, noremap = true})
+-- vim.keymap.set('n', '<Leader>n', '<Cmd>Nav<CR>', opts)
 
 function keybindings.attached_binds(bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('i', '<C-space>',  "<C-x><C-o>", bufopts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', bufopts)
+    vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<Leader>ac', vim.lsp.buf.code_action, bufopts)
+    -- vim.keymap.set('n', '<Leader>ac', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<Leader>ac', "<cmd>Lspsaga code_action<CR>", bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
     vim.keymap.set('n', '<space>F', function() vim.lsp.buf.format { async = true } end, bufopts)
@@ -52,11 +53,12 @@ end
 
 
 -- ================================================================================
--- [TELESCOPE KEYBINDINGS]
+-- [FILE KEYBINDINGS]
 -- ================================================================================
 local builtin = require('telescope.builtin')
 vim.keymap.set("n", "<Leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<Leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<Leader>gf", "<cmd>Lspsaga finder<CR>", {})
 -- vim.keymap.set("n", "<Leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<Leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<Leader>h", builtin.keymaps, {})

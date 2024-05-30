@@ -14,8 +14,8 @@ vim.cmd([[
 	colorscheme rose-pine-moon
 
     set colorcolumn=80
+    set signcolumn=yes:2
 
-    filetype indent off
 	set expandtab
 	set tabstop=4
 	set shiftwidth=4

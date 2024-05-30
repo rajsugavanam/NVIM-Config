@@ -1,23 +1,19 @@
 require("lazy").setup({
 
-'wbthomason/packer.nvim',
-
+-- {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+-- },
 -- 'Mofiqul/vscode.nvim',
 -- 'loctvl842/monokai-pro.nvim',
-{
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-},
 -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 -- "wilmanbarrios/palenight.nvim",
 -- "morhetz/gruvbox",
 { "rose-pine/neovim", name = "rose-pine" },
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
--- require("nvim-treesitter.install").prefer_git == false,
--- require("nvim-treesitter.install").compilers == {"clang", "gcc"},
 
 'hrsh7th/cmp-nvim-lsp',
 'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -41,27 +37,16 @@ require("lazy").setup({
 'mfussenegger/nvim-dap',
 
 -- Visual
-'yggdroot/indentline',
-'RRethy/vim-illuminate',
 {
-  "utilyre/barbecue.nvim",
-  version = "*",
-  dependencies = {
-    "SmiteshP/nvim-navic",
-    "nvim-tree/nvim-web-devicons", -- optional dependency
-  },
-  config = function()
-	require('barbecue').setup()
-  end
-},
-{
-    "SmiteshP/nvim-navbuddy",
-    dependencies = {
-        "SmiteshP/nvim-navic",
-        "MunifTanjim/nui.nvim"
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+        exclude = {
+            filetypes = { "dashboard" }
+        },
     },
-    opts = { lsp = { auto_attach = true } },
 },
+'RRethy/vim-illuminate',
 -- File Browsing
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
@@ -73,17 +58,6 @@ require("lazy").setup({
         require("telescope").load_extension "file_browser"
     end
 },
-
--- {
---     "nvim-neo-tree/neo-tree.nvim",
---     branch = "v2.x",
---     dependencies = {
---         "nvim-lua/plenary.nvim",
---         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
---         "MunifTanjim/nui.nvim",
---     }
--- },
-
 {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 -- Typing
 {
@@ -100,11 +74,77 @@ require("lazy").setup({
   dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
--- "andweeb/presence.nvim"
 {
     'IogaMaster/neocord',
-}
--- "leonardssh/coc-discord-rpc",
--- {"neoclide/coc.nvim", branch="release"}
+},
+{
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+        require('dashboard').setup {
+            theme = "hyper",
+            config = {
+                header =
+                {
+                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⢰⣦⡀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⢀⣴⣦⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⣿⣿⣿⣦⡀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣆⠀⠀⢀⣴⣿⣿⣿⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⣿⣿⣿⣿⣷⡄⠘⣿⣿⣿⣿⣿⣿⣿⡿⠀⣴⣿⣿⣿⣿⣿⠀⠀⠀⠀",
+                    "⠀⢸⣦⡀⠙⢿⣿⣿⣿⣿⠆⠈⠛⣋⣉⣉⡛⠛⠀⢾⣿⣿⣿⣿⡿⠟⢀⣤⡆⠀",
+                    "⠀⢸⣿⣿⣷⣄⠙⢿⠟⢁⣴⣾⣿⠿⠛⠻⣿⣿⣦⣄⠙⢿⡿⠋⣀⣴⣿⣿⡇⠀",
+                    "⠀⢸⣿⣿⣿⣿⣷⣄⠐⢿⣿⠟⢁⣴⣾⣦⡀⠙⢿⣿⡷⠀⣠⣾⣿⣿⣿⣿⡇⠀",
+                    "⠀⢸⣿⣿⣿⣿⣿⣿⣦⡀⠁⣴⣿⣿⣿⣿⣿⣦⡈⠋⣠⣾⣿⣿⣿⣿⣿⣿⠃⠀",
+                    "⠀⠈⣿⣿⣿⣿⣿⣿⡟⢀⣾⣿⣿⣿⣿⣿⣿⣿⣷⡀⢻⣿⣿⣿⣿⣿⣿⡏⠀⠀",
+                    "⠀⠀⠸⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠈⣿⣿⣿⣿⣿⡟⠀⠀⠀",
+                    "⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⡟⠁⠀⠀⠀",
+                    "⠀⠀⠀⠀⠈⠻⣿⣿⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣿⣿⡿⠋⠀⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⠀⠀⠈⠛⠧⠘⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠼⠋⠁⠀⠀⠀⠀⠀⠀⠀",
+                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠛⠛⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                },
+                footer = { "", "Learn to live a little." }
+            }
+        }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}},
+},
+{ "nvimdev/lspsaga.nvim" },
+
+{
+  "folke/trouble.nvim",
+  keys = {
+    {
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xX",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>cs",
+      "<cmd>Trouble symbols toggle focus=false<cr>",
+      desc = "Symbols (Trouble)",
+    },
+    {
+      "<leader>cl",
+      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      desc = "LSP Definitions / references / ... (Trouble)",
+    },
+    {
+      "<leader>xL",
+      "<cmd>Trouble loclist toggle<cr>",
+      desc = "Location List (Trouble)",
+    },
+    {
+      "<leader>xQ",
+      "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
+  },
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
+},
 
 })

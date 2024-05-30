@@ -21,6 +21,7 @@ require("pairsconfig")
 require("cmp.cmpconfig")
 
 require("language.lsp")
+require("language.lspsagaconfig")
 
 require("lualineconfig")
 require("treesitterconfig")

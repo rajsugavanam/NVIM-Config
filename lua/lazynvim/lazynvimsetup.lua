@@ -11,16 +11,22 @@ require("lazy").setup({
 -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 -- "wilmanbarrios/palenight.nvim",
 -- "morhetz/gruvbox",
-{ "rose-pine/neovim", name = "rose-pine" },
+{
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function ()
+    end
+},
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
 'hrsh7th/cmp-nvim-lsp',
 'hrsh7th/cmp-nvim-lsp-signature-help',
-'hrsh7th/cmp-buffer',
+{ 'hrsh7th/cmp-buffer' },
 'hrsh7th/cmp-path',
 'hrsh7th/cmp-cmdline',
-'hrsh7th/nvim-cmp',
+{ 'hrsh7th/nvim-cmp' },
+
 'williamboman/mason.nvim',
 'williamboman/mason-lspconfig.nvim',
 'rshkarin/mason-nvim-lint',
@@ -30,7 +36,8 @@ require("lazy").setup({
 "quangnguyen30192/cmp-nvim-ultisnips",
 -- *INSTALL PYNVIM*
 
-'neovim/nvim-lspconfig',
+{ 'neovim/nvim-lspconfig' },
+
 'mfussenegger/nvim-jdtls',
 "lervag/vimtex",
 
@@ -86,23 +93,54 @@ require("lazy").setup({
             config = {
                 header =
                 {
-                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⢰⣦⡀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⢀⣴⣦⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⣿⣿⣿⣦⡀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣆⠀⠀⢀⣴⣿⣿⣿⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⣿⣿⣿⣿⣷⡄⠘⣿⣿⣿⣿⣿⣿⣿⡿⠀⣴⣿⣿⣿⣿⣿⠀⠀⠀⠀",
-                    "⠀⢸⣦⡀⠙⢿⣿⣿⣿⣿⠆⠈⠛⣋⣉⣉⡛⠛⠀⢾⣿⣿⣿⣿⡿⠟⢀⣤⡆⠀",
-                    "⠀⢸⣿⣿⣷⣄⠙⢿⠟⢁⣴⣾⣿⠿⠛⠻⣿⣿⣦⣄⠙⢿⡿⠋⣀⣴⣿⣿⡇⠀",
-                    "⠀⢸⣿⣿⣿⣿⣷⣄⠐⢿⣿⠟⢁⣴⣾⣦⡀⠙⢿⣿⡷⠀⣠⣾⣿⣿⣿⣿⡇⠀",
-                    "⠀⢸⣿⣿⣿⣿⣿⣿⣦⡀⠁⣴⣿⣿⣿⣿⣿⣦⡈⠋⣠⣾⣿⣿⣿⣿⣿⣿⠃⠀",
-                    "⠀⠈⣿⣿⣿⣿⣿⣿⡟⢀⣾⣿⣿⣿⣿⣿⣿⣿⣷⡀⢻⣿⣿⣿⣿⣿⣿⡏⠀⠀",
-                    "⠀⠀⠸⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠈⣿⣿⣿⣿⣿⡟⠀⠀⠀",
-                    "⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⡟⠁⠀⠀⠀",
-                    "⠀⠀⠀⠀⠈⠻⣿⣿⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣿⣿⡿⠋⠀⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⠀⠀⠈⠛⠧⠘⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠼⠋⠁⠀⠀⠀⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠛⠛⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                    "                   #     -=     #                   ",
+                    "             #     -#    :-    #=     #             ",
+                    "              #     #    :-    #     #              ",
+                    "        +      #     *   :-   *     #      +        ",
+                    "         #=     #    #   :-   #    #     =#         ",
+                    "           #:    #   -*  --  *-   #    :#           ",
+                    "    #-      -#    #-  #      #  -#    #-      :#    ",
+                    "      *#+     =#                    #+     +##      ",
+                    "         +#*        .*##*****##.        *#+         ",
+                    " --         +#   .*#************#*:   #+         -- ",
+                    "   =+####:      ****++++++++++++****      :####+=   ",
+                    "          +=   +**++++++++++++++++**+   =+          ",
+                    "              #**++++++++++++++++++**#              ",
+                    ".#########.  #**++++++++++++++++++++**#   #########:",
+                    "             *+*++++++++++++++++++++*+*             ",
+                    "        =+   #**++++++++++++++++++++**#   *=        ",
+                    " .-**++       **********++++**********       ++**-: ",
+                    "  @*+*+:      .#:::::=********=:::::#:      .+*+*%  ",
+                    "        @@%+%@+       :::++:::       =@%+%@%        ",
+                    "   #@@@+       =@@%%@@        @@%%@@=       +@@@#   ",
+                    "        *@@@@@*        %@@@@%        *@@@@@*        ",
+                    "     +@@       @@#.+@@#      *@@+ #@@       @@+     ",
+                    "         %@@@#    -    .@@@@:    -    #@@@%         ",
+                    "              %@#    @@-    :@@.   #@%              ",
+                    "           %%    %@@=   -@@=   =@@%    %@           ",
+                    "              %@     #@@.   @@#     @@              ",
+                    "                         -=                         ",
                 },
-                footer = { "", "Learn to live a little." }
+                footer = { "", "Learn to live a little." },
+                shortcut = {
+                    {
+                        desc = "[  rajsugavanam]",
+                        group = "@constant.builtin"
+                    }
+                },
+                project = {
+                    enable = true,
+                    limit = 10,
+                    icon = '  ',
+                    label = 'Recent Projects',
+                    action = 'Telescope find_files cwd=',
+                },
+                mru = {
+                    limit = 15,
+                    icon = '  ',
+                    label = 'Recently Opened',
+                    cwd_only = false
+                }
             }
         }
     end,
@@ -147,4 +185,23 @@ require("lazy").setup({
   opts = {}, -- for default options, refer to the configuration section for custom setup.
 },
 
-})
+{
+  "utilyre/barbecue.nvim",
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  opts = {
+    -- configurations go here
+  },
+},
+
+},
+{
+    ui = {
+        border = "rounded",
+    },
+}
+)

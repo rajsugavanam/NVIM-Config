@@ -12,9 +12,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.editorconfig = false
--- HOLY SHIT THANK YOU FOR DISABLING TYPESCRIPT TWO-SPACE!!!!
+-- THANK YOU FOR DISABLING TYPESCRIPT TWO-SPACE!!!!
+
 
 require("lazynvim.lazynvimsetup")
+
+require("rose-pine").setup {
+    dim_inactive_windows=true,
+}
+
 require("vimrc_config")
 
 require("pairsconfig")

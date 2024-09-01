@@ -23,7 +23,8 @@ local servers = {
     "html",
     "cssls",
     "jdtls",
-    "tsserver"
+    "tsserver",
+    "intelephense",
 }
 
 require("mason").setup()

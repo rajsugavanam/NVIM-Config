@@ -23,7 +23,7 @@ local servers = {
     "html",
     "cssls",
     "jdtls",
-    "tsserver",
+    "ts_ls",
     "intelephense",
 }
 

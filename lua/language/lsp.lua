@@ -23,7 +23,7 @@ local servers = {
     "html",
     "cssls",
     "jdtls",
-    "tsserver",
+    "ts_ls",
     "intelephense",
 }
 
@@ -43,7 +43,7 @@ local ON_ATTACH = keybindings.attach
 local function extraneous(lsp)
     return
         (lsp == "jdtls")
-        -- || ...
+        or (lsp == "ts_ls")
 end
 
 function SetupLSP(lsp)

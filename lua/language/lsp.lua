@@ -25,6 +25,7 @@ local servers = {
     "jdtls",
     "ts_ls",
     "intelephense",
+    "rust_analyzer",
 }
 
 require("mason").setup()
@@ -52,7 +53,7 @@ function SetupLSP(lsp)
     lspconfig[lsp].setup {
         capabilities = CAPABILITIES,
         on_attach = ON_ATTACH,
-        single_file_support = false,
+        single_file_support = true,
     }
 end
 

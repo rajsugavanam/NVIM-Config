@@ -11,7 +11,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme rose-pine-moon
+	colorscheme rose-pine
 
     set colorcolumn=80
     set signcolumn=yes:2

@@ -26,6 +26,7 @@ local servers = {
     "ts_ls",
     "intelephense",
     "rust_analyzer",
+    "bashls",
 }
 
 require("mason").setup()

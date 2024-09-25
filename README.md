@@ -45,6 +45,10 @@ Install using a package manager, such as with the examples listed below
 1. `$ sudo dnf install python3`
 2. `$ sudo apt install python3`
 
+- `pynvim`:
+1. `$ python3 -m ensurepip --upgrade`
+2. `$ python3 -m pip install --user --upgrade pynvim`
+
 ### Before You Start
 
 I use UltiSnips for snippets, which are autocomplete shortcuts.

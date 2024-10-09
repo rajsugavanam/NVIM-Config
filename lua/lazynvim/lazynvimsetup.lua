@@ -1,31 +1,39 @@
 require("lazy").setup({
 
--- {
---     "folke/tokyonight.nvim",
---     lazy = false,
---     priority = 1000,
---     opts = {},
--- },
--- 'Mofiqul/vscode.nvim',
--- 'loctvl842/monokai-pro.nvim',
--- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
--- "wilmanbarrios/palenight.nvim",
--- "morhetz/gruvbox",
+{
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+},
+{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+{ "EdenEast/nightfox.nvim" },
+"morhetz/gruvbox",
 {
     "rose-pine/neovim",
     name = "rose-pine",
     config = function ()
     end
 },
+{ "sainnhe/everforest" },
+{ "rebelot/kanagawa.nvim" },
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
 'hrsh7th/cmp-nvim-lsp',
-'hrsh7th/cmp-nvim-lsp-signature-help',
+-- 'hrsh7th/cmp-nvim-lsp-signature-help',
+{
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {
+    },
+    config = function(_, opts) require'lsp_signature'.setup(opts) end
+},
 { 'hrsh7th/cmp-buffer' },
 'hrsh7th/cmp-path',
 'hrsh7th/cmp-cmdline',
 { 'hrsh7th/nvim-cmp' },
+{ "onsails/lspkind.nvim" },
 
 'williamboman/mason.nvim',
 'williamboman/mason-lspconfig.nvim',
@@ -34,6 +42,7 @@ require("lazy").setup({
 
 "SirVer/ultisnips",
 "quangnguyen30192/cmp-nvim-ultisnips",
+"honza/vim-snippets",
 -- *INSTALL PYNVIM*
 
 { 'neovim/nvim-lspconfig' },
@@ -65,7 +74,7 @@ require("lazy").setup({
         require("telescope").load_extension "file_browser"
     end
 },
-{'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
+-- {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 -- Typing
 {
     'windwp/nvim-autopairs',
@@ -84,72 +93,52 @@ require("lazy").setup({
 {
     'IogaMaster/neocord',
 },
-{
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-        require('dashboard').setup {
-            theme = "hyper",
-            config = {
-                header =
-                {
-                    "                   #     -=     #                   ",
-                    "             #     -#    :-    #=     #             ",
-                    "              #     #    :-    #     #              ",
-                    "        +      #     *   :-   *     #      +        ",
-                    "         #=     #    #   :-   #    #     =#         ",
-                    "           #:    #   -*  --  *-   #    :#           ",
-                    "    #-      -#    #-  #      #  -#    #-      :#    ",
-                    "      *#+     =#                    #+     +##      ",
-                    "         +#*        .*##*****##.        *#+         ",
-                    " --         +#   .*#************#*:   #+         -- ",
-                    "   =+####:      ****++++++++++++****      :####+=   ",
-                    "          +=   +**++++++++++++++++**+   =+          ",
-                    "              #**++++++++++++++++++**#              ",
-                    ".#########.  #**++++++++++++++++++++**#   #########:",
-                    "             *+*++++++++++++++++++++*+*             ",
-                    "        =+   #**++++++++++++++++++++**#   *=        ",
-                    " .-**++       **********++++**********       ++**-: ",
-                    "  @*+*+:      .#:::::=********=:::::#:      .+*+*%  ",
-                    "        @@%+%@+       :::++:::       =@%+%@%        ",
-                    "   #@@@+       =@@%%@@        @@%%@@=       +@@@#   ",
-                    "        *@@@@@*        %@@@@%        *@@@@@*        ",
-                    "     +@@       @@#.+@@#      *@@+ #@@       @@+     ",
-                    "         %@@@#    -    .@@@@:    -    #@@@%         ",
-                    "              %@#    @@-    :@@.   #@%              ",
-                    "           %%    %@@=   -@@=   =@@%    %@           ",
-                    "              %@     #@@.   @@#     @@              ",
-                    "                         -=                         ",
-                },
-                footer = { "", "Learn to live a little." },
-                shortcut = {
-                    {
-                        desc = "[  rajsugavanam]",
-                        group = "@constant.builtin"
-                    }
-                },
-                project = {
-                    enable = true,
-                    limit = 10,
-                    icon = '  ',
-                    label = 'Recent Projects',
-                    action = 'Telescope find_files cwd=',
-                },
-                mru = {
-                    limit = 15,
-                    icon = '  ',
-                    label = 'Recently Opened',
-                    cwd_only = false
-                }
-            }
-        }
-    end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}},
-},
+-- {
+--     'nvimdev/dashboard-nvim',
+--     event = 'VimEnter',
+--     config = function()
+--         require('dashboard').setup {
+--             theme = "hyper",
+--             config = {
+--                 header =
+--                 {
+--                 "▀██▀  ▀██▀         ▀██  ▀██         ",
+--                 " ██    ██    ▄▄▄▄   ██   ██    ▄▄▄  ",
+--                 " ██▀▀▀▀██  ▄█▄▄▄██  ██   ██  ▄█  ▀█▄",
+--                 " ██    ██  ██       ██   ██  ██   ██",
+--                 "▄██▄  ▄██▄  ▀█▄▄▄▀ ▄██▄ ▄██▄  ▀█▄▄█▀",
+--                 "                                    ",
+--                 },
+--                 footer = { "", "Learn to live a little." },
+--                 shortcut = {
+--                     {
+--                         desc = "[  rajsugavanam]",
+--                         group = "@constant.builtin"
+--                     }
+--                 },
+--                 project = {
+--                     enable = true,
+--                     limit = 10,
+--                     icon = '  ',
+--                     label = 'Recent Projects',
+--                     action = 'Telescope find_files cwd=',
+--                 },
+--                 mru = {
+--                     limit = 15,
+--                     icon = '  ',
+--                     label = 'Recently Opened',
+--                     cwd_only = false
+--                 }
+--             }
+--         }
+--     end,
+--     dependencies = { {'nvim-tree/nvim-web-devicons'}},
+-- },
 { "nvimdev/lspsaga.nvim" },
 
 {
   "folke/trouble.nvim",
+  cmd = "Trouble",
   keys = {
     {
       "<leader>xx",
@@ -182,7 +171,10 @@ require("lazy").setup({
       desc = "Quickfix List (Trouble)",
     },
   },
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  opts = {
+      warn_no_results = false,
+      open_no_results = true
+  }
 },
 
 {

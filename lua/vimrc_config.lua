@@ -1,6 +1,8 @@
 local vim = vim
 
 vim.cmd([[
+
+    set shortmess=I
 	
     function HighlightTex()
         hi Conceal guifg=#ffff00 guibg=#00000000
@@ -11,7 +13,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme rose-pine-main
+	colorscheme tokyonight-moon
 
     set colorcolumn=80
     set signcolumn=yes:2
@@ -20,6 +22,10 @@ vim.cmd([[
 	set tabstop=4
 	set shiftwidth=4
 	set softtabstop=4
+
+    set linebreak
+    let &showbreak = "󱞩 "
+    set breakindent
 
     set cursorline
     set number
@@ -33,10 +39,12 @@ vim.cmd([[
 
 	set completeopt-=preview
 
+    inoremap <C-h> <Nop>
+
     let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " snippet dir
     let g:UltiSnipsExpandTrigger="<Tab>"
-    let g:UltiSnipsJumpForwardTrigger="<C-f>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+    let g:UltiSnipsJumpForwardTrigger="<C-l>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-h>"
     set autoread
 
 ]])

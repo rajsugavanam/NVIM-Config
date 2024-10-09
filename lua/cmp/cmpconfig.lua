@@ -1,4 +1,5 @@
-local cmp = require'cmp'
+local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 local repterm = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -10,6 +11,18 @@ cmp.setup({
         expand = function(args)
             vim.fn["UltiSnips#Anon"](args.body)
         end,
+    },
+    -- lspkind
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            show_labelDetails = true,
+            before = function(entry, vim_item)
+                return vim_item
+            end
+        })
     },
     window = {
         completion = cmp.config.window.bordered(),

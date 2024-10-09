@@ -2,6 +2,7 @@ local lspconfig = require("lspconfig")
 -- require("language.settings.nativelsp")
 local keybindings = require("keybindings.bindings")
 
+
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover,
     { border = 'rounded' }
@@ -40,7 +41,13 @@ require("mason-lspconfig").setup {
 -- root_dir: the highest parent directory that the LSP will recognize.
 
 local CAPABILITIES = require("cmp_nvim_lsp").default_capabilities()
-local ON_ATTACH = keybindings.attach
+local ON_ATTACH = function(client, bufnr)
+    keybindings.attach(client, bufnr)
+    local cfg = {
+        hint_prefix = ""
+    }
+    require("lsp_signature").on_attach(cfg,bufnr)
+end
 
 local function extraneous(lsp)
     return

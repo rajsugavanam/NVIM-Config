@@ -16,6 +16,11 @@ nvm), I will not provide instructions for that here.
 
 If you don't have a package manager that can install neovim, you'll need
 to [build it from source](https://github.com/neovim/neovim/blob/master/BUILD.md).
+Please note that many Linux distributions such as Ubuntu's `apt` have a very
+outdated version of neovim to the point where this configuration will not work
+(so **don't** use `sudo apt install neovim`)! If you're on Mac, I recommend
+[homebrew](https://brew.sh/). You can use this for Linux as well, but if you do
+not wish to install homebrew, I recommend building it from source.
 Follow the four steps listed there.
 
 To install this configuration: 
@@ -27,7 +32,7 @@ $ cd .config
 $ rm -rf nvim
 ```
 (Warning: the last command will **erase your entire existing configuration** if
-one exists. You have been warned!)
+one exists, and there is no turning back. You have been warned!)
 ```console
 $ git clone https://github.com/rajsugavanam/NVIM-Config nvim
 ```
@@ -35,9 +40,7 @@ $ git clone https://github.com/rajsugavanam/NVIM-Config nvim
 ### Prerequisites
 
 - `nvm`:
-```console
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-```
+1. `$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
 Or by using a package manager.
 
 - `python3`:
@@ -50,7 +53,7 @@ Install using a package manager, such as with the examples listed below
 2. `$ python3 -m pip install --user --upgrade pynvim`
 
 - `cargo` (for asm_lsp)
-1. `curl https://sh.rustup.rs -sSf | sh`
+1. `$ curl https://sh.rustup.rs -sSf | sh`
 
 ### Before You Start
 

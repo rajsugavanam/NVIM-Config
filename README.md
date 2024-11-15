@@ -49,6 +49,9 @@ Install using a package manager, such as with the examples listed below
 1. `$ python3 -m ensurepip --upgrade`
 2. `$ python3 -m pip install --user --upgrade pynvim`
 
+- `cargo` (for asm_lsp)
+1. `curl https://sh.rustup.rs -sSf | sh`
+
 ### Before You Start
 
 I use UltiSnips for snippets, which are autocomplete shortcuts.

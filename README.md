@@ -58,6 +58,12 @@ I use UltiSnips for snippets, which are autocomplete shortcuts.
 You can create your own or modify existing ones by looking at
 `~/.config/nvim/UltiSnips/<snippet language>/<some snippet file name>.snippets`.
 
+I should mention that your neovim experience will not be very pleasant if you
+do not use a [patched font](https://www.nerdfonts.com/font-downloads)! These
+fonts come bundled with many extra symbol characters as the terminal cannot
+display images, and must display icons as special characters. You don't
+*need* it, but it is *very strongly* advised!
+
 ### Common Custom Actions
 - `<space>fb` (Open File Explorer)
 - `\fb` (Open List of Open Windows/Buffers)

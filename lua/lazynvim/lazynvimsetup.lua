@@ -9,7 +9,7 @@ require("lazy").setup({
 },
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 { "EdenEast/nightfox.nvim" },
-"morhetz/gruvbox",
+"sainnhe/gruvbox-material",
 {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -18,6 +18,7 @@ require("lazy").setup({
 },
 { "sainnhe/everforest" },
 { "rebelot/kanagawa.nvim" },
+'marko-cerovac/material.nvim',
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
@@ -91,9 +92,9 @@ require("lazy").setup({
   dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
-{
-    'IogaMaster/neocord',
-},
+-- {
+--     'IogaMaster/neocord',
+-- },
 -- {
 --     'nvimdev/dashboard-nvim',
 --     event = 'VimEnter',

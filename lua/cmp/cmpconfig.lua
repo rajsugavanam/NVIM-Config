@@ -15,7 +15,7 @@ cmp.setup({
     -- lspkind
     formatting = {
         format = lspkind.cmp_format({
-            mode = 'symbol',
+            mode = 'symbol_text',
             maxwidth = 50,
             ellipsis_char = '...',
             show_labelDetails = true,

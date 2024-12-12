@@ -13,7 +13,7 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme tokyonight-moon
+	colorscheme catppuccin-mocha
 
     set colorcolumn=80
     set signcolumn=yes:2
@@ -21,7 +21,7 @@ vim.cmd([[
 	set tabstop=4
 	set shiftwidth=4
 	set softtabstop=4
-	set expandtab
+	set noexpandtab
 
     set linebreak
     let &showbreak = "󱞩 "
@@ -46,6 +46,8 @@ vim.cmd([[
     let g:UltiSnipsJumpForwardTrigger="<C-l>"
     let g:UltiSnipsJumpBackwardTrigger="<C-h>"
     set autoread
+
+    set shortmess=atS
 
 ]])
 --now i don't get disgusting --INSERT-- text at the bottom

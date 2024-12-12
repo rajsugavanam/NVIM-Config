@@ -23,7 +23,6 @@ local servers = {
     "texlab",
     "html",
     "cssls",
-    "jdtls",
     "ts_ls",
     "intelephense",
     "rust_analyzer",
@@ -51,8 +50,8 @@ local ON_ATTACH = function(client, bufnr)
 end
 
 local function extraneous(lsp)
-    return
-        (lsp == "jdtls")
+    -- return
+        -- (lsp == "jdtls")
 end
 
 function SetupLSP(lsp)

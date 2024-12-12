@@ -69,14 +69,21 @@ require("lazy").setup({
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
 
+-- FILE TREE - PICK ONE
 {
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    "nvim-tree/nvim-tree.lua",
     config = function()
-        require("telescope").load_extension "file_browser"
+        require("nvim-tree").setup()
     end
 },
--- {'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
+-- {
+--     "nvim-telescope/telescope-file-browser.nvim",
+--     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+--     config = function()
+--         require("telescope").load_extension "file_browser"
+--     end
+-- },
+-----------------------
 -- Typing
 {
     'windwp/nvim-autopairs',
@@ -92,92 +99,51 @@ require("lazy").setup({
   dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
--- {
---     'IogaMaster/neocord',
--- },
--- {
---     'nvimdev/dashboard-nvim',
---     event = 'VimEnter',
---     config = function()
---         require('dashboard').setup {
---             theme = "hyper",
---             config = {
---                 header =
---                 {
---                 "▀██▀  ▀██▀         ▀██  ▀██         ",
---                 " ██    ██    ▄▄▄▄   ██   ██    ▄▄▄  ",
---                 " ██▀▀▀▀██  ▄█▄▄▄██  ██   ██  ▄█  ▀█▄",
---                 " ██    ██  ██       ██   ██  ██   ██",
---                 "▄██▄  ▄██▄  ▀█▄▄▄▀ ▄██▄ ▄██▄  ▀█▄▄█▀",
---                 "                                    ",
---                 },
---                 footer = { "", "Learn to live a little." },
---                 shortcut = {
---                     {
---                         desc = "[  rajsugavanam]",
---                         group = "@constant.builtin"
---                     }
---                 },
---                 project = {
---                     enable = true,
---                     limit = 10,
---                     icon = '  ',
---                     label = 'Recent Projects',
---                     action = 'Telescope find_files cwd=',
---                 },
---                 mru = {
---                     limit = 15,
---                     icon = '  ',
---                     label = 'Recently Opened',
---                     cwd_only = false
---                 }
---             }
---         }
---     end,
---     dependencies = { {'nvim-tree/nvim-web-devicons'}},
--- },
+{
+    'IogaMaster/neocord',
+},
 { "nvimdev/lspsaga.nvim" },
 
-{
-  "folke/trouble.nvim",
-  cmd = "Trouble",
-  keys = {
-    {
-      "<leader>xx",
-      "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "Diagnostics (Trouble)",
-    },
-    {
-      "<leader>xX",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Buffer Diagnostics (Trouble)",
-    },
-    {
-      "<leader>cs",
-      "<cmd>Trouble symbols toggle focus=false<cr>",
-      desc = "Symbols (Trouble)",
-    },
-    {
-      "<leader>cl",
-      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
-    },
-    {
-      "<leader>xL",
-      "<cmd>Trouble loclist toggle<cr>",
-      desc = "Location List (Trouble)",
-    },
-    {
-      "<leader>xQ",
-      "<cmd>Trouble qflist toggle<cr>",
-      desc = "Quickfix List (Trouble)",
-    },
-  },
-  opts = {
-      warn_no_results = false,
-      open_no_results = true
-  }
-},
+-- {
+--   "folke/trouble.nvim",
+--   cmd = "Trouble",
+--   keys = {
+--     {
+--       "<leader>xx",
+--       "<cmd>Trouble diagnostics toggle<cr>",
+--       desc = "Diagnostics (Trouble)",
+--     },
+--     {
+--       "<leader>xX",
+--       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+--       desc = "Buffer Diagnostics (Trouble)",
+--     },
+--     {
+--       "<leader>cs",
+--       "<cmd>Trouble symbols toggle focus=false<cr>",
+--       desc = "Symbols (Trouble)",
+--     },
+--     {
+--       "<leader>cl",
+--       "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+--       desc = "LSP Definitions / references / ... (Trouble)",
+--     },
+--     {
+--       "<leader>xL",
+--       "<cmd>Trouble loclist toggle<cr>",
+--       desc = "Location List (Trouble)",
+--     },
+--     {
+--       "<leader>xQ",
+--       "<cmd>Trouble qflist toggle<cr>",
+--       desc = "Quickfix List (Trouble)",
+--     },
+--   },
+--   opts = {
+--       warn_no_results = false,
+--       open_no_results = true
+--   }
+-- },
 
 {
   "utilyre/barbecue.nvim",
@@ -191,8 +157,16 @@ require("lazy").setup({
     -- configurations go here
   },
 },
+{
+  "kkoomen/vim-doge",
+},
+{ 'rktjmp/lush.nvim' },
+
+-- END PLUGINS LIST
 
 },
+
+-- Lazy setup options
 {
     ui = {
         border = "rounded",

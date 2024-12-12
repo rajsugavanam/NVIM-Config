@@ -1,5 +1,3 @@
-local vim = vim
-
 vim.cmd([[
 
     set shortmess=I
@@ -14,6 +12,7 @@ vim.cmd([[
 	syntax enable
 	set hlsearch
 	colorscheme catppuccin-mocha
+	set termguicolors
 
     set colorcolumn=80
     set signcolumn=yes:2

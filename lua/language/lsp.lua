@@ -18,7 +18,6 @@ local servers = {
 	"lua_ls",
 	"clangd",
 	"cmake",
-    "arduino_language_server",
     "angularls",
     "texlab",
     "html",
@@ -28,6 +27,7 @@ local servers = {
     "rust_analyzer",
     "bashls",
     "asm_lsp",
+	"efm",
 }
 
 require("mason").setup()
@@ -50,8 +50,8 @@ local ON_ATTACH = function(client, bufnr)
 end
 
 local function extraneous(lsp)
-    -- return
-        -- (lsp == "jdtls")
+    return
+        (lsp == "ast_grep")
 end
 
 function SetupLSP(lsp)
@@ -85,6 +85,17 @@ function SetupSourcekit()
     }
 end
 
+function SetupAstGrep()
+	local configs = require("lspconfig.configs");
+    configs["ast_grep"] = {
+		default_config = {
+			cmd = { "ast-grep", "lsp" },
+			single_file_support = false,
+			root_dir = lspconfig.util.root_pattern('sgconfig.yml');
+		}
+    }
+end
+
 function SetupArduinoLS()
     local MY_FQBN = "arduino:avr:uno"
     lspconfig["arduino_language_server"].setup {
@@ -107,7 +118,8 @@ function SetupAllLSP()
     end
 
     SetupSourcekit()
-    SetupArduinoLS()
+    -- SetupArduinoLS()
+	SetupAstGrep();
 
 end
 

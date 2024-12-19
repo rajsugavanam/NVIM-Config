@@ -1,7 +1,5 @@
 vim.cmd([[
 
-    set shortmess=I
-	
     function HighlightTex()
         hi Conceal guifg=#ffff00 guibg=#00000000
     endfunction
@@ -11,11 +9,11 @@ vim.cmd([[
 
 	syntax enable
 	set hlsearch
-	colorscheme catppuccin-mocha
 	set termguicolors
+	colorscheme catppuccin-mocha
 
     set colorcolumn=80
-    set signcolumn=yes:2
+	set signcolumn=yes
 
 	set tabstop=4
 	set shiftwidth=4
@@ -46,7 +44,6 @@ vim.cmd([[
     let g:UltiSnipsJumpBackwardTrigger="<C-h>"
     set autoread
 
-    set shortmess=atS
+    set shortmess=IatS
 
 ]])
---now i don't get disgusting --INSERT-- text at the bottom

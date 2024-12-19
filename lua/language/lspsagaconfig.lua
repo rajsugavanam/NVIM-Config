@@ -11,15 +11,12 @@ require("lspsaga").setup {
 	}
 }
 
+-- clear warning signs on left side of line numbers
 vim.cmd([[
 	sign define DiagnosticSignError text=	
 	sign define DiagnosticSignWarn text=  
 	sign define DiagnosticSignInfo text=  
 	sign define DiagnosticSignHint text= 
-	highlight DiagnosticSignWarn guibg=NONE ctermbg=NONE
-	highlight DiagnosticSignError guibg=NONE ctermbg=NONE
-	highlight DiagnosticSignHint guibg=NONE ctermbg=NONE
-	highlight DiagnosticSignInfo guibg=NONE ctermbg=NONE
 ]])
 
 local icons = {

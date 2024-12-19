@@ -1,20 +1,20 @@
 require("lazy").setup({
 
 {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-    },
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+	},
 },
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 { "EdenEast/nightfox.nvim" },
 "sainnhe/gruvbox-material",
 {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    config = function ()
-    end
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = function ()
+	end
 },
 { "sainnhe/everforest" },
 { "rebelot/kanagawa.nvim" },
@@ -25,11 +25,11 @@ require("lazy").setup({
 'hrsh7th/cmp-nvim-lsp',
 -- 'hrsh7th/cmp-nvim-lsp-signature-help',
 {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    opts = {
-    },
-    config = function(_, opts) require'lsp_signature'.setup(opts) end
+	"ray-x/lsp_signature.nvim",
+	event = "VeryLazy",
+	opts = {
+	},
+	config = function(_, opts) require'lsp_signature'.setup(opts) end
 },
 { 'hrsh7th/cmp-buffer' },
 'hrsh7th/cmp-path',
@@ -50,19 +50,25 @@ require("lazy").setup({
 { 'neovim/nvim-lspconfig' },
 
 'mfussenegger/nvim-jdtls',
+-- {
+-- 	'nvim-java/nvim-java',
+-- 	config = function()
+-- 		require('java').setup()
+-- 	end
+-- },
 "lervag/vimtex",
 
 'mfussenegger/nvim-dap',
 
 -- Visual
 {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {
-        exclude = {
-            filetypes = { "dashboard" }
-        },
-    },
+	"lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
+	opts = {
+		exclude = {
+			filetypes = { "dashboard" }
+		},
+	},
 },
 'RRethy/vim-illuminate',
 -- File Browsing
@@ -71,24 +77,24 @@ require("lazy").setup({
 
 -- FILE TREE - PICK ONE
 {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-        require("nvim-tree").setup()
-    end
+	"nvim-tree/nvim-tree.lua",
+	config = function()
+		require("nvim-tree").setup()
+	end
 },
 -- {
---     "nvim-telescope/telescope-file-browser.nvim",
---     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
---     config = function()
---         require("telescope").load_extension "file_browser"
---     end
+--	   "nvim-telescope/telescope-file-browser.nvim",
+--	   requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+--	   config = function()
+--		   require("telescope").load_extension "file_browser"
+--	   end
 -- },
 -----------------------
 -- Typing
 {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+	'windwp/nvim-autopairs',
+	event = "InsertEnter",
+	opts = {} -- this is equalent to setup({}) function
 },
 'tpope/vim-surround',
 'majutsushi/tagbar',
@@ -100,17 +106,17 @@ require("lazy").setup({
 },
 -- Social
 {
-    'IogaMaster/neocord',
+	'IogaMaster/neocord',
 },
 { "nvimdev/lspsaga.nvim" },
 
 -- {
--- 	"folke/trouble.nvim",
--- 	cmd = "Trouble",
--- 	opts = {
--- 		warn_no_results = false,
--- 		open_no_results = true
--- 	}
+--	"folke/trouble.nvim",
+--	cmd = "Trouble",
+--	opts = {
+--		warn_no_results = false,
+--		open_no_results = true
+--	}
 -- },
 
 {
@@ -118,11 +124,11 @@ require("lazy").setup({
   name = "barbecue",
   version = "*",
   dependencies = {
-    "SmiteshP/nvim-navic",
-    "nvim-tree/nvim-web-devicons", -- optional dependency
+	"SmiteshP/nvim-navic",
+	"nvim-tree/nvim-web-devicons", -- optional dependency
   },
   opts = {
-    -- configurations go here
+	-- configurations go here
   },
 },
 {
@@ -131,9 +137,9 @@ require("lazy").setup({
 { 'rktjmp/lush.nvim' },
 {
 	'rcarriga/nvim-notify',
-    config = function()
+	config = function()
 		vim.notify = require("notify")
-    end
+	end
 },
 
 -- END PLUGINS LIST
@@ -142,8 +148,8 @@ require("lazy").setup({
 
 -- Lazy setup options
 {
-    ui = {
-        border = "rounded",
-    },
+	ui = {
+		border = "rounded",
+	},
 }
 )

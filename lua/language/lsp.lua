@@ -51,7 +51,7 @@ end
 
 local function extraneous(lsp)
     return
-        (lsp == "ast_grep")
+        (lsp == "jdtls")
 end
 
 function SetupLSP(lsp)

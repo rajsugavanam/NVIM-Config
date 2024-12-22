@@ -60,69 +60,56 @@ vim.keymap.set("n", "<Leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<Leader>h", builtin.keymaps, {})
 
 -- File explorer
-vim.api.nvim_set_keymap(
-    "n",
-    "<space>fb",
-    ":NvimTreeToggle<CR>",
-    { noremap=true, silent=true }
-)
+vim.api.nvim_set_keymap("n", "<space>fb", ":NvimTreeToggle<CR>", { noremap=true, silent=true })
 
 -- Telescope buffers
-vim.api.nvim_set_keymap(
-    "n",
-    "<Leader>fb",
-    ":Telescope buffers<CR>",
-    { noremap=true, silent=true }
-)
+vim.api.nvim_set_keymap("n", "<Leader>fb", ":Telescope buffers<CR>", { noremap=true, silent=true })
 
 -- vim-doge documentation
 vim.api.nvim_set_keymap(
     "n",
-    "<Leader>d",
+    "<Leader>gcc", -- make analogous to a regular comment
     "<Plug>(doge-generate)",
     { noremap=true, silent=true }
 )
 
--- ================================================================================
--- [BARBAR KEYBINDINGS]
--- ================================================================================
--- local map = vim.api.nvim_set_keymap
--- Move to previous/next
--- map('n', '≤', '<Cmd>BufferPrevious<CR>', opts) -- alt comma but for mac
--- map('n', '≥', '<Cmd>BufferNext<CR>', opts) -- alt period
--- Re-order to previous/next
--- map('n', '¯', '<Cmd>BufferMovePrevious<CR>', opts) -- alt < || alt shft ,
--- map('n', '˘', '<Cmd>BufferMoveNext<CR>', opts) -- alt >
--- Goto buffer in position...
--- map('n', '¡', '<Cmd>BufferGoto 1<CR>', opts) -- alt 1
--- map('n', '™', '<Cmd>BufferGoto 2<CR>', opts) -- alt 2
--- map('n', '£', '<Cmd>BufferGoto 3<CR>', opts) -- alt 3
--- map('n', '¢', '<Cmd>BufferGoto 4<CR>', opts) -- alt 4
--- map('n', '∞', '<Cmd>BufferGoto 5<CR>', opts) -- alt 5
--- map('n', '§', '<Cmd>BufferGoto 6<CR>', opts) -- alt 6
--- map('n', '¶', '<Cmd>BufferGoto 7<CR>', opts) -- alt 7
--- map('n', '•', '<Cmd>BufferGoto 8<CR>', opts) -- alt 8
--- map('n', 'ª', '<Cmd>BufferGoto 9<CR>', opts) -- alt 9
--- map('n', 'º', '<Cmd>BufferLast<CR>', opts) -- alt 0
--- Pin/unpin buffer
--- map('n', 'π', '<Cmd>BufferPin<CR>', opts) -- alt p
--- Close buffer
--- map('n', 'ç', '<Cmd>BufferClose<CR>', opts) -- alt c
--- map('n', '∑', '<Cmd>BufferWipeout<CR>', opts) -- alt w
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
--- map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
--- Sort automatically by...
--- map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
--- map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
--- map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
--- map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+-- DAP
+vim.keymap.set("n", "<Leader>dt", require('dapui').toggle, { noremap=true, silent=true })
+vim.keymap.set("n", "<Leader>bt", require('dap').toggle_breakpoint, { noremap=true, silent=true })
+
+vim.keymap.set(
+    "n", "<Leader>bct",
+    function ()
+        vim.ui.input({prompt='Condition: '},
+        function(cond)
+            if (cond == nil) then
+                return
+            elseif (cond=='') then
+                vim.notify("Toggled standard breakpoint.", "info")
+            else
+                vim.notify("Toggled breakpoint with condition "..cond..".", "info")
+            end
+            require('dap').toggle_breakpoint(cond, nil, nil)
+        end)
+    end,
+    { noremap=true, silent=true }
+)
+
+-- DEBUGGING KEYBINDS
+local debug_keybind_opts = { noremap=true, silent=true }
+vim.keymap.set("n", "<Leader>dc", require('dap').continue, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dq", require('dap').terminate, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dsv", require('dap').step_over, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dsi", require('dap').step_into, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dso", require('dap').step_out, debug_keybind_opts)
+
+vim.keymap.set({ "n", "v" }, "<Leader>dK", require('dap.ui.widgets').hover, debug_keybind_opts)
+vim.keymap.set({ "n", "v" }, "<Leader>dp", require('dap.ui.widgets').preview, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>ds",
+function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end,
+debug_keybind_opts)
 
 return keybindings

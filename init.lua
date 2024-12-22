@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.editorconfig = false
+-- vim.g.editorconfig = false
 -- THANK YOU FOR DISABLING TYPESCRIPT TWO-SPACE!!!!
 
 
@@ -36,3 +36,5 @@ require("keybindings.bindings")
 
 require("barbar.barbarconfig")
 require("presence.presenceconfig")
+
+require("nvim_dap")

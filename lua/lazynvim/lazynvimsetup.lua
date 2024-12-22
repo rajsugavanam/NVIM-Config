@@ -76,12 +76,7 @@ require("lazy").setup({
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
 
 -- FILE TREE - PICK ONE
-{
-	"nvim-tree/nvim-tree.lua",
-	config = function()
-		require("nvim-tree").setup()
-	end
-},
+{ "nvim-tree/nvim-tree.lua" },
 -- {
 --	   "nvim-telescope/telescope-file-browser.nvim",
 --	   requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -135,12 +130,13 @@ require("lazy").setup({
   "kkoomen/vim-doge",
 },
 { 'rktjmp/lush.nvim' },
-{
-	'rcarriga/nvim-notify',
-	config = function()
-		vim.notify = require("notify")
-	end
-},
+{ 'rcarriga/nvim-notify' },
+-- DEBUGGER
+{ 'mfussenegger/nvim-dap' },
+{ "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+{ 'stevearc/overseer.nvim' },
+{ 'stevearc/dressing.nvim' },
+
 
 -- END PLUGINS LIST
 
@@ -153,3 +149,10 @@ require("lazy").setup({
 	},
 }
 )
+
+vim.notify = require("notify")
+require('dapui').setup()
+require("nvim-tree").setup()
+require('overseer').setup({
+    dap=true
+})

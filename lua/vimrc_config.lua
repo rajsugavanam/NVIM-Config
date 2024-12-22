@@ -12,13 +12,13 @@ vim.cmd([[
 	set termguicolors
 	colorscheme catppuccin-mocha
 
-    set colorcolumn=80
-	set signcolumn=yes
+    set colorcolumn=120
+	set signcolumn=yes:2
 
 	set tabstop=4
 	set shiftwidth=4
 	set softtabstop=4
-	set noexpandtab
+	set expandtab
 
     set linebreak
     let &showbreak = "󱞩 "

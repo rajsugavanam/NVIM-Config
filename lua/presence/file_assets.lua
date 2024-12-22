@@ -129,6 +129,7 @@ return {
     conf = { "CONFIGURATION FILE", "config" },
     config = { "CONFIGURATION FILE", "config" },
     cpp = { "C++", "cpp" },
+    cu = { "CUDA-C", "cuda" },
     cr = { "CRYSTAL", "crystal" },
     cs = { "C#", "csharp" },
     css = { "CSS", "css" },

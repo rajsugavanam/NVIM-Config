@@ -31,7 +31,6 @@ local servers = {
 local linters = {
 	"cpplint",
 	"cspell",
-	"vale",
 	"eslint_d",
 	"jsonlint",
 }
@@ -40,9 +39,9 @@ local linters = {
 require("lint").linters_by_ft = {
 	cpp = {'cpplint'},
 	c = {},
-	tex = {'vale', 'cspell'},
-	txt = {'vale', 'cspell'},
-	md = {'vale', 'cspell'},
+	tex = {'cspell'},
+	txt = {'cspell'},
+	md = {'cspell'},
 	ts = {'eslint_d'},
 	json = {'jsonlint'}
 }

@@ -136,6 +136,7 @@ require("lazy").setup({
 { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 { 'stevearc/overseer.nvim' },
 { 'stevearc/dressing.nvim' },
+{ "stevearc/oil.nvim" },
 
 
 -- END PLUGINS LIST
@@ -156,3 +157,4 @@ require("nvim-tree").setup()
 require('overseer').setup({
     dap=true
 })
+require("oil").setup()

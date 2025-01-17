@@ -39,8 +39,9 @@ $ git clone https://github.com/rajsugavanam/NVIM-Config nvim
 
 ### Prerequisites
 
-- `nvm`:
+- `nvm` and `npm`:
 1. `$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
+2. `$ nvm install node`
 Or by using a package manager.
 
 - `python3`:

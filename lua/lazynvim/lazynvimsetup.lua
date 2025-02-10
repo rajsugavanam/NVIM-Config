@@ -56,7 +56,21 @@ require("lazy").setup({
 -- 		require('java').setup()
 -- 	end
 -- },
-"lervag/vimtex",
+{
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+        vim.g.vimtex_quickfix_enabled = 0
+        vim.g.vimtex_view_method = "skim"
+        vim.g.vimtex_compiler_latexmk = {
+            executable = 'latexmk',
+            options = {
+                '-pdf',
+                '-pvc',
+            },
+        }
+    end
+},
 
 'mfussenegger/nvim-dap',
 
@@ -86,11 +100,11 @@ require("lazy").setup({
 -- },
 -----------------------
 -- Typing
-{
-	'windwp/nvim-autopairs',
-	event = "InsertEnter",
-	opts = {} -- this is equalent to setup({}) function
-},
+-- {
+-- 	'windwp/nvim-autopairs',
+-- 	event = "InsertEnter",
+-- 	opts = {} -- this is equalent to setup({}) function
+-- },
 'tpope/vim-surround',
 'majutsushi/tagbar',
 'tpope/vim-commentary',
@@ -136,8 +150,6 @@ require("lazy").setup({
 { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 { 'stevearc/overseer.nvim' },
 { 'stevearc/dressing.nvim' },
-{ "stevearc/oil.nvim" },
-
 
 -- END PLUGINS LIST
 
@@ -157,4 +169,3 @@ require("nvim-tree").setup()
 require('overseer').setup({
     dap=true
 })
-require("oil").setup()

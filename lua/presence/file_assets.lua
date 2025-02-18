@@ -229,6 +229,7 @@ return {
     snap = { "JEST SNAPSHOT", "jest" },
     sql = { "SQL", "database" },
     ss = { "SCHEME", "scheme" },
+    sv = { "SYSTEMVERILOG", "systemverilog" },
     svelte = { "SVELTE", "svelte" },
     svg = { "SVG", "markup" },
     swift = { "SWIFT", "swift" },

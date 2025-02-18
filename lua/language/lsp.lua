@@ -27,6 +27,7 @@ local servers = {
 	"intelephense",
 	"rust_analyzer",
 	"bashls",
+	"verible",
 }
 local linters = {
 	"cpplint",
@@ -72,7 +73,7 @@ local CAPABILITIES = require("cmp_nvim_lsp").default_capabilities()
 local ON_ATTACH = function(client, bufnr)
 	keybindings.attach(client, bufnr)
 	local cfg = {
-		hint_prefix = ""
+		hint_prefix = "" -- probably for those error icon things
 	}
 	require("lsp_signature").on_attach(cfg,bufnr)
 end

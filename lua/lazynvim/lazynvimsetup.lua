@@ -23,6 +23,7 @@ require("lazy").setup({
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
 'hrsh7th/cmp-nvim-lsp',
+{ "nvimdev/lspsaga.nvim" },
 -- 'hrsh7th/cmp-nvim-lsp-signature-help',
 {
 	"ray-x/lsp_signature.nvim",
@@ -100,11 +101,11 @@ require("lazy").setup({
 -- },
 -----------------------
 -- Typing
--- {
--- 	'windwp/nvim-autopairs',
--- 	event = "InsertEnter",
--- 	opts = {} -- this is equalent to setup({}) function
--- },
+{
+	'windwp/nvim-autopairs',
+	event = "InsertEnter",
+	opts = {} -- this is equalent to setup({}) function
+},
 'tpope/vim-surround',
 'majutsushi/tagbar',
 'tpope/vim-commentary',
@@ -114,19 +115,13 @@ require("lazy").setup({
   dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
-{
-	'IogaMaster/neocord',
-},
-{ "nvimdev/lspsaga.nvim" },
-
 -- {
---	"folke/trouble.nvim",
---	cmd = "Trouble",
---	opts = {
---		warn_no_results = false,
---		open_no_results = true
---	}
+-- 	'IogaMaster/neocord',
 -- },
+{
+    'vyfor/cord.nvim',
+    run = ':Cord update',
+},
 
 {
   "utilyre/barbecue.nvim",

@@ -28,6 +28,7 @@ local servers = {
 	"rust_analyzer",
 	"bashls",
 	"verible",
+	"svlangserver",
 }
 local linters = {
 	"cpplint",

@@ -7,7 +7,14 @@ require("lazy").setup({
 	opts = {
 	},
 },
-{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+{
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+        transparent_background = true,
+    },
+},
 { "EdenEast/nightfox.nvim" },
 "sainnhe/gruvbox-material",
 {
@@ -159,6 +166,9 @@ require("lazy").setup({
 )
 
 vim.notify = require("notify")
+vim.notify.setup({
+    background_colour = "#000000"
+})
 require('dapui').setup()
 require("nvim-tree").setup()
 require('overseer').setup({

@@ -29,7 +29,7 @@ require('cord').setup({
         icon = nil,
     },
     display = {
-        theme = 'onyx',
+        -- theme = 'onyx',
         swap_fields = false,
         swap_icons = false,
     },

@@ -27,7 +27,6 @@ vim.cmd([[
     set cursorline
     set number
 	set relativenumber
-    filetype plugin on
 	
 	let g:airline_powerline_fonts = 1
 	let g:airline_theme='wombat'

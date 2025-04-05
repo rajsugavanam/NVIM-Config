@@ -31,7 +31,7 @@ local servers = {
 	"svlangserver",
 }
 local linters = {
-	"cpplint",
+	-- "cpplint",
 	"cspell",
 	"eslint_d",
 	"jsonlint",
@@ -39,8 +39,8 @@ local linters = {
 
 -- LINTERS
 require("lint").linters_by_ft = {
-	cpp = {'cpplint'},
-	c = {},
+	-- cpp = {'cpplint'},
+	-- c = {},
 	tex = {'cspell'},
 	txt = {'cspell'},
 	md = {'cspell'},

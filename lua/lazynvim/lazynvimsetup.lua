@@ -152,6 +152,7 @@ require("lazy").setup({
 { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 { 'stevearc/overseer.nvim' },
 { 'stevearc/dressing.nvim' },
+{ 'MeanderingProgrammer/render-markdown.nvim' },
 
 -- END PLUGINS LIST
 

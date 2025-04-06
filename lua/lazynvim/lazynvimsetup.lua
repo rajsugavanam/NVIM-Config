@@ -142,8 +142,12 @@ require("lazy").setup({
 	-- configurations go here
   },
 },
+-- {
+--   "kkoomen/vim-doge",
+-- },
 {
-  "kkoomen/vim-doge",
+    "danymat/neogen",
+    config = true,
 },
 { 'rktjmp/lush.nvim' },
 { 'rcarriga/nvim-notify' },

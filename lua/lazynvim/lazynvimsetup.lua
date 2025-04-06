@@ -153,6 +153,7 @@ require("lazy").setup({
 { 'stevearc/overseer.nvim' },
 { 'stevearc/dressing.nvim' },
 { 'MeanderingProgrammer/render-markdown.nvim' },
+{ 'HiPhish/rainbow-delimiters.nvim' },
 
 -- END PLUGINS LIST
 

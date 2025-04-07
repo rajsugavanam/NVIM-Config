@@ -158,6 +158,11 @@ require("lazy").setup({
 { 'stevearc/dressing.nvim' },
 { 'MeanderingProgrammer/render-markdown.nvim' },
 { 'HiPhish/rainbow-delimiters.nvim' },
+{
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+},
 
 -- END PLUGINS LIST
 
@@ -180,3 +185,9 @@ require("nvim-tree").setup()
 require('overseer').setup({
     dap=true
 })
+require('marks').setup {
+    bookmark_0 = {
+        sign = "⚑",
+        virt_text = "[Bookmarked]",
+    },
+}

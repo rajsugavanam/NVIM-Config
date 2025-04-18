@@ -163,6 +163,10 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {},
 },
+{
+    'folke/todo-comments.nvim',
+    dependencies = { "nvim-lua/plenary.nvim" },
+},
 
 -- END PLUGINS LIST
 
@@ -191,3 +195,4 @@ require('marks').setup {
         virt_text = "[Bookmarked]",
     },
 }
+require('todo-comments').setup()

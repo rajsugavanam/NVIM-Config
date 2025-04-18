@@ -66,6 +66,7 @@ vim.api.nvim_set_keymap("n", "<space>fb", ":NvimTreeToggle<CR>", { noremap=true,
 -- Telescope misc
 vim.api.nvim_set_keymap("n", "<Leader>fb", ":Telescope buffers<CR>", { noremap=true, silent=true })
 vim.api.nvim_set_keymap("n", "<Leader>vm", ":Telescope marks<CR>", { noremap=true, silent=true })
+vim.api.nvim_set_keymap("n", "<Leader>td", ":TodoTelescope<CR>", { noremap=true, silent=true })
 
 -- DAP
 vim.keymap.set("n", "<Leader>dt", require('dapui').toggle, { noremap=true, silent=true })

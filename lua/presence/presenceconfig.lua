@@ -106,7 +106,7 @@ require('cord').setup({
         },
         discord = {
             reconnect = {
-                enabled = false,
+                enabled = true,
                 interval = 5000,
                 initial = true,
             },

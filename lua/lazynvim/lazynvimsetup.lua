@@ -119,7 +119,7 @@ require("lazy").setup({
 -- Airline
 {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
+  -- dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
 -- Social
 -- {
@@ -131,16 +131,16 @@ require("lazy").setup({
 },
 
 {
-  "utilyre/barbecue.nvim",
-  name = "barbecue",
-  version = "*",
-  dependencies = {
-	"SmiteshP/nvim-navic",
-	"nvim-tree/nvim-web-devicons", -- optional dependency
-  },
-  opts = {
-	-- configurations go here
-  },
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+        "SmiteshP/nvim-navic",
+        "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+        -- configurations go here
+    },
 },
 -- {
 --   "kkoomen/vim-doge",

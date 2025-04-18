@@ -40,9 +40,10 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.HINT] = icons.HINT,
         }
     },
-    virtual_lines = true,
-    float = { border = "rounded", update_in_insert = true, },
+    --virtual_lines = true,
+    virtual_text = false,
+    --float = { border = "rounded", update_in_insert = true, },
     underline = true,
-    update_in_insert = false,
+    update_in_insert = true,
     severity_sort = true,
 })

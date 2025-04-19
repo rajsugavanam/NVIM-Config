@@ -197,4 +197,6 @@ require('marks').setup {
     },
 }
 require('todo-comments').setup()
-require('gitsigns').setup()
+require('gitsigns').setup({
+    sign_priority = 10000
+})

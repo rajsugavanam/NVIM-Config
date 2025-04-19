@@ -27,6 +27,8 @@ vim.cmd([[
     set cursorline
     set number
 	set relativenumber
+
+    set scrolloff=15
 	
 	let g:airline_powerline_fonts = 1
 	let g:airline_theme='wombat'

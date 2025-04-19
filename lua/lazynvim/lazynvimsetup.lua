@@ -167,6 +167,7 @@ require("lazy").setup({
     'folke/todo-comments.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
 },
+{ 'lewis6991/gitsigns.nvim' },
 
 -- END PLUGINS LIST
 
@@ -196,3 +197,4 @@ require('marks').setup {
     },
 }
 require('todo-comments').setup()
+require('gitsigns').setup()

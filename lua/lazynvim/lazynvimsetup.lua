@@ -80,7 +80,7 @@ require("lazy").setup({
     end
 },
 
-'mfussenegger/nvim-dap',
+-- { 'mfussenegger/nvim-dap' }, most useless plugin ever
 
 -- Visual
 {
@@ -168,6 +168,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
 },
 { 'lewis6991/gitsigns.nvim' },
+{ 'sindrets/diffview.nvim' },
 
 -- END PLUGINS LIST
 

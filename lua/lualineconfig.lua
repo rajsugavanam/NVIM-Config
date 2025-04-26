@@ -20,14 +20,7 @@ require('lualine').setup {
   sections = {
     lualine_a = { { 'mode', separator = { left = '', right = '' } } },
     lualine_b = { 'branch', 'diff'},
-    lualine_c = {
-        { 'buffers', symbols = {
-            modified = ' ●',
-            alternate_file = '#',
-            directory =  '', },
-        },
-        'diagnostics'
-    },
+    lualine_c = { '%t %m' },
     lualine_x = {'lsp_status', 'filetype'},
     lualine_y = {'filesize', 'encoding', 'progress', 'searchcount'},
     lualine_z = { { 'location', separator = { left = '', right= '' } } }

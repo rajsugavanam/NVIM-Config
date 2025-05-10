@@ -126,30 +126,29 @@ function SetupAstGrep()
 	}
 end
 
-function SetupArduinoLS()
-	local MY_FQBN = "arduino:avr:uno"
-	lspconfig["arduino_language_server"].setup {
-		capabilities = CAPABILITIES,
-		on_attach = ON_ATTACH,
-		single_file_support = true,
-		cmd = {
-			"arduino-language-server",
-			"-cli-config", "/opt/homebrew/bin/arduino-cli",
-			"-fqbn",
-			MY_FQBN
-		},
-	}
-end
+-- function SetupArduinoLS()
+-- 	local MY_FQBN = "arduino:avr:uno"
+-- 	lspconfig["arduino_language_server"].setup {
+-- 		capabilities = CAPABILITIES,
+-- 		on_attach = ON_ATTACH,
+-- 		single_file_support = true,
+-- 		cmd = {
+-- 			"arduino-language-server",
+-- 			"-cli-config", "/opt/homebrew/bin/arduino-cli",
+-- 			"-fqbn",
+-- 			MY_FQBN
+-- 		},
+-- 	}
+-- end
 
 function SetupAllLSP()
 
-	for _, lsp in ipairs(servers) do
-		SetupLSP(lsp)
-	end
+	-- for _, lsp in ipairs(servers) do
+	-- 	SetupLSP(lsp)
+	-- end
 
-	SetupSourcekit()
-	-- SetupArduinoLS()
-	SetupAstGrep();
+	-- SetupSourcekit()
+	-- SetupAstGrep();
 
 end
 

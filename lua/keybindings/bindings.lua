@@ -31,7 +31,7 @@ vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end,
 -- vim.keymap.set('n', 'K', '<cmd>silent Lspsaga hover_doc<CR>', bufopts)
 -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 -- vim.keymap.set({'i'}, '<C-s>', vim.lsp.buf.signature_help, bufopts)
-vim.keymap.set({'n', 'i'}, '<C-s>', require("lsp_signature").toggle_float_win, bufopts)
+vim.keymap.set({'n', 'i'}, '<C-s>', vim.lsp.buf.signature_help, bufopts)
 vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, bufopts)
 -- vim.keymap.set('n', 'gy', '<cmd>silent Lspsaga goto_typedefinition<CR>', bufopts)
 vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)

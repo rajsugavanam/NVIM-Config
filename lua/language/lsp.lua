@@ -73,10 +73,7 @@ require('mason-nvim-lint').setup({
 local CAPABILITIES = require("cmp_nvim_lsp").default_capabilities()
 local ON_ATTACH = function(client, bufnr)
 	keybindings.attach(client, bufnr)
-	local cfg = {
-		hint_prefix = "" -- probably for those error icon things
-	}
-	require("lsp_signature").on_attach(cfg,bufnr)
+	require("lsp_signature").on_attach({},bufnr)
 end
 
 local function extraneous(lsp)

@@ -36,6 +36,11 @@ require("lazy").setup({
 	"ray-x/lsp_signature.nvim",
 	event = "VeryLazy",
 	opts = {
+        bind = true,
+        handler_opts = {
+            border = "rounded"
+        },
+		hint_prefix = "" -- probably for those error icon things
 	},
 	config = function(_, opts) require'lsp_signature'.setup(opts) end
 },

@@ -65,26 +65,25 @@ require('mason-nvim-lint').setup({
 	ensure_installed = linters,
 })
 
-
 -- capabilities: to work with nvim-cmp.
 -- on_attach: function to run when the lsp attaches (I add the keybinds here.)
 -- root_dir: the highest parent directory that the LSP will recognize.
 
 local CAPABILITIES = require("cmp_nvim_lsp").default_capabilities()
 local ON_ATTACH = function(client, bufnr)
-	keybindings.attach(client, bufnr)
+	-- keybindings.attach(client, bufnr)
 	require("lsp_signature").on_attach({},bufnr)
 end
 
 local function extraneous(lsp)
-	return
-		(lsp == "jdtls")
+	-- return
+	-- 	(lsp == "jdtls")
 end
 
 function SetupLSP(lsp)
-	if (extraneous(lsp)) then
-		return
-	end
+	-- if (extraneous(lsp)) then
+	-- 	return
+	-- end
 	lspconfig[lsp].setup {
 		capabilities = CAPABILITIES,
 		on_attach = ON_ATTACH,
@@ -94,12 +93,12 @@ end
 
 -- called by the java language server automagically
 function SetupJava()
-	require("jdtls").start_or_attach {
-		cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
-		root_dir = vim.fs.dirname(vim.fs.find({"gradlew", ".git", "mvnw"}, { upward = true })[1]),
-		capabilities = CAPABILITIES,
-		on_attach = ON_ATTACH,
-	}
+	-- require("jdtls").start_or_attach {
+	-- 	cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+	-- 	root_dir = vim.fs.dirname(vim.fs.find({"gradlew", ".git", "mvnw"}, { upward = true })[1]),
+	-- 	capabilities = CAPABILITIES,
+	-- 	on_attach = ON_ATTACH,
+	-- }
 end
 
 function SetupSourcekit()
@@ -140,9 +139,10 @@ end
 
 function SetupAllLSP()
 
-	-- for _, lsp in ipairs(servers) do
-	-- 	SetupLSP(lsp)
-	-- end
+	for _, lsp in ipairs(servers) do
+		SetupLSP(lsp)
+	end
+    SetupLSP("jdtls")
 
 	-- SetupSourcekit()
 	-- SetupAstGrep();

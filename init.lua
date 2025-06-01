@@ -17,10 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazynvim.lazynvimsetup")
 
-require("rose-pine").setup {
-    dim_inactive_windows=true,
-}
-
 require("vimrc_config")
 
 require("pairsconfig")

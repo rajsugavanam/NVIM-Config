@@ -15,17 +15,17 @@ require("lazy").setup({
         transparent_background = true,
     },
 },
-{ "EdenEast/nightfox.nvim" },
-"sainnhe/gruvbox-material",
-{
-	"rose-pine/neovim",
-	name = "rose-pine",
-	config = function ()
-	end
-},
-{ "sainnhe/everforest" },
-{ "rebelot/kanagawa.nvim" },
-'marko-cerovac/material.nvim',
+-- { "EdenEast/nightfox.nvim" },
+-- "sainnhe/gruvbox-material",
+-- {
+-- 	"rose-pine/neovim",
+-- 	name = "rose-pine",
+-- 	config = function ()
+-- 	end
+-- },
+-- { "sainnhe/everforest" },
+-- { "rebelot/kanagawa.nvim" },
+-- 'marko-cerovac/material.nvim',
 -- Language Support
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
@@ -50,8 +50,9 @@ require("lazy").setup({
 { 'hrsh7th/nvim-cmp' },
 { "onsails/lspkind.nvim" },
 
-'williamboman/mason.nvim',
-'williamboman/mason-lspconfig.nvim',
+-- TODO: Remove when fix is implemented.
+{ 'mason-org/mason.nvim', version = "^1.0.0" },
+{ 'mason-org/mason-lspconfig.nvim', version = "^1.0.0" },
 'rshkarin/mason-nvim-lint',
 "mfussenegger/nvim-lint",
 
@@ -61,14 +62,8 @@ require("lazy").setup({
 -- *INSTALL PYNVIM*
 
 { 'neovim/nvim-lspconfig' },
-
-'mfussenegger/nvim-jdtls',
--- {
--- 	'nvim-java/nvim-java',
--- 	config = function()
--- 		require('java').setup()
--- 	end
--- },
+{ 'mfussenegger/nvim-jdtls' },
+-- { 'nvim-java/nvim-java' },
 {
     "lervag/vimtex",
     lazy = false,
@@ -174,6 +169,7 @@ require("lazy").setup({
 },
 { 'lewis6991/gitsigns.nvim' },
 { 'sindrets/diffview.nvim' },
+{ 'ThePrimeagen/refactoring.nvim' },
 
 -- END PLUGINS LIST
 
@@ -206,3 +202,26 @@ require('todo-comments').setup()
 require('gitsigns').setup({
     sign_priority = 10000
 })
+require('refactoring').setup()
+-- require('java').setup({
+--     java_test = {
+--         enable = false,
+--     },
+
+--     -- load java debugger plugins
+--     java_debug_adapter = {
+--         enable = false,
+--     },
+
+--     spring_boot_tools = {
+--         enable = false,
+--     },
+
+--     jdk = {
+--         -- install jdk using mason.nvim
+--         auto_install = false,
+--     },
+--     notifications = {
+--         dap = false
+--     },
+-- })

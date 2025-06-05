@@ -139,10 +139,10 @@ end
 
 function SetupAllLSP()
 
-	for _, lsp in ipairs(servers) do
-		SetupLSP(lsp)
-	end
-    SetupLSP("jdtls")
+	-- for _, lsp in ipairs(servers) do
+	-- 	SetupLSP(lsp)
+	-- end
+    -- SetupLSP("jdtls")
 
 	-- SetupSourcekit()
 	-- SetupAstGrep();

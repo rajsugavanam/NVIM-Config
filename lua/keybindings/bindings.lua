@@ -73,42 +73,42 @@ vim.api.nvim_set_keymap("n", "<Leader>vm", ":Telescope marks<CR>", { noremap=tru
 vim.api.nvim_set_keymap("n", "<Leader>td", ":TodoTelescope<CR>", { noremap=true, silent=true })
 
 -- DAP
--- vim.keymap.set("n", "<Leader>dt", require('dapui').toggle, { noremap=true, silent=true })
--- vim.keymap.set("n", "<Leader>bt", require('dap').toggle_breakpoint, { noremap=true, silent=true })
+vim.keymap.set("n", "<Leader>dt", require('dapui').toggle, { noremap=true, silent=true })
+vim.keymap.set("n", "<Leader>bt", require('dap').toggle_breakpoint, { noremap=true, silent=true })
 
--- vim.keymap.set(
---     "n", "<Leader>bct",
---     function ()
---         vim.ui.input({prompt='Condition: '},
---         function(cond)
---             if (cond == nil) then
---                 return
---             elseif (cond=='') then
---                 vim.notify("Toggled standard breakpoint.", "info")
---             else
---                 vim.notify("Toggled breakpoint with condition "..cond..".", "info")
---             end
---             require('dap').toggle_breakpoint(cond, nil, nil)
---         end)
---     end,
---     { noremap=true, silent=true }
--- )
+vim.keymap.set(
+    "n", "<Leader>bct",
+    function ()
+        vim.ui.input({prompt='Condition: '},
+        function(cond)
+            if (cond == nil) then
+                return
+            elseif (cond=='') then
+                vim.notify("Toggled standard breakpoint.", "info")
+            else
+                vim.notify("Toggled breakpoint with condition "..cond..".", "info")
+            end
+            require('dap').toggle_breakpoint(cond, nil, nil)
+        end)
+    end,
+    { noremap=true, silent=true }
+)
 
 -- DEBUGGING KEYBINDS
 local debug_keybind_opts = { noremap=true, silent=true }
--- vim.keymap.set("n", "<Leader>dc", require('dap').continue, debug_keybind_opts)
--- vim.keymap.set("n", "<Leader>dq", require('dap').terminate, debug_keybind_opts)
--- vim.keymap.set("n", "<Leader>dsv", require('dap').step_over, debug_keybind_opts)
--- vim.keymap.set("n", "<Leader>dsi", require('dap').step_into, debug_keybind_opts)
--- vim.keymap.set("n", "<Leader>dso", require('dap').step_out, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dc", require('dap').continue, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dq", require('dap').terminate, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dsv", require('dap').step_over, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dsi", require('dap').step_into, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>dso", require('dap').step_out, debug_keybind_opts)
 
--- vim.keymap.set({ "n", "v" }, "<Leader>dK", require('dap.ui.widgets').hover, debug_keybind_opts)
--- vim.keymap.set({ "n", "v" }, "<Leader>dp", require('dap.ui.widgets').preview, debug_keybind_opts)
--- vim.keymap.set("n", "<Leader>ds",
--- function()
---     local widgets = require('dap.ui.widgets')
---     widgets.centered_float(widgets.scopes)
--- end,
--- debug_keybind_opts)
+vim.keymap.set({ "n", "v" }, "<Leader>dK", require('dap.ui.widgets').hover, debug_keybind_opts)
+vim.keymap.set({ "n", "v" }, "<Leader>dp", require('dap.ui.widgets').preview, debug_keybind_opts)
+vim.keymap.set("n", "<Leader>ds",
+function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end,
+debug_keybind_opts)
 
 return keybindings

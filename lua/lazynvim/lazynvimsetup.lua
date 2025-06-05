@@ -80,7 +80,7 @@ require("lazy").setup({
     end
 },
 
--- { 'mfussenegger/nvim-dap' }, most useless plugin ever
+{ 'mfussenegger/nvim-dap' },
 
 -- Visual
 {

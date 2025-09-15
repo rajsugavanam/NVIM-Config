@@ -14,7 +14,7 @@ local keybindings = require("keybindings.bindings")
 -- )
 
 -- LANGUAGE SERVERS
-local servers = {
+local force_installed_servers = {
 	"pyright",
 	"lua_ls",
 	"clangd",
@@ -29,8 +29,6 @@ local servers = {
 	"bashls",
 	"verible",
 	"svlangserver",
-    "millet",
-    "hls",
 }
 local linters = {
 	-- "cpplint",
@@ -61,7 +59,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPre", "BufNewFile", "TextC
 
 require("mason").setup()
 require("mason-lspconfig").setup {
-	ensure_installed = servers,
+	ensure_installed = force_installed_servers,
 }
 require('mason-nvim-lint').setup({
 	ensure_installed = linters,

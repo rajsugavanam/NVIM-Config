@@ -29,6 +29,8 @@ local servers = {
 	"bashls",
 	"verible",
 	"svlangserver",
+    "millet",
+    "hls",
 }
 local linters = {
 	-- "cpplint",

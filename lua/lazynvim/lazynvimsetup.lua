@@ -44,15 +44,15 @@ require("lazy").setup({
 	},
 	config = function(_, opts) require'lsp_signature'.setup(opts) end
 },
-{ 'hrsh7th/cmp-buffer' },
+"hrsh7th/cmp-buffer",
 'hrsh7th/cmp-path',
 'hrsh7th/cmp-cmdline',
-{ 'hrsh7th/nvim-cmp' },
-{ "onsails/lspkind.nvim" },
+"hrsh7th/nvim-cmp",
+"onsails/lspkind.nvim",
 
 -- TODO: Remove when fix is implemented.
-{ 'mason-org/mason.nvim' },
-{ 'mason-org/mason-lspconfig.nvim' },
+"mason-org/mason.nvim",
+"mason-org/mason-lspconfig.nvim",
 'rshkarin/mason-nvim-lint',
 "mfussenegger/nvim-lint",
 
@@ -61,8 +61,8 @@ require("lazy").setup({
 "honza/vim-snippets",
 -- *INSTALL PYNVIM*
 
-{ 'neovim/nvim-lspconfig' },
-{ 'mfussenegger/nvim-jdtls' },
+"neovim/nvim-lspconfig",
+"mfussenegger/nvim-jdtls",
 -- { 'nvim-java/nvim-java' },
 {
     "lervag/vimtex",

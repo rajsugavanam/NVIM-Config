@@ -12,11 +12,11 @@ require("lazy").setup({
     name = "catppuccin",
     priority = 1000,
     opts = {
-        transparent_background = true,
+        transparent_background = false,
     },
 },
 -- { "EdenEast/nightfox.nvim" },
--- "sainnhe/gruvbox-material",
+"sainnhe/gruvbox-material",
 -- {
 -- 	"rose-pine/neovim",
 -- 	name = "rose-pine",
@@ -125,10 +125,10 @@ require("lazy").setup({
 -- {
 -- 	'IogaMaster/neocord',
 -- },
-{
-    'vyfor/cord.nvim',
-    run = ':Cord update',
-},
+-- {
+--     'vyfor/cord.nvim',
+--     run = ':Cord update',
+-- },
 
 {
     "utilyre/barbecue.nvim",

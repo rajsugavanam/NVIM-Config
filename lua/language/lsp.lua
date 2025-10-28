@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 -- require("language.settings.nativelsp")
 local keybindings = require("keybindings.bindings")
 
@@ -84,11 +84,11 @@ function SetupLSP(lsp)
 	-- if (extraneous(lsp)) then
 	-- 	return
 	-- end
-	lspconfig[lsp].setup {
+	vim.lsp.config(lsp, {
 		capabilities = CAPABILITIES,
 		on_attach = ON_ATTACH,
 		single_file_support = true,
-	}
+	})
 end
 
 -- called by the java language server automagically
@@ -102,24 +102,13 @@ function SetupJava()
 end
 
 function SetupSourcekit()
-	lspconfig["sourcekit"].setup {
+	vim.lsp.config("sourcekit", {
 		capabilities = CAPABILITIES,
 		on_attach = ON_ATTACH,
 		single_file_support = true,
 		filetypes = { "swift" },
 		cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
-	}
-end
-
-function SetupAstGrep()
-	local configs = require("lspconfig.configs");
-	configs["ast_grep"] = {
-		default_config = {
-			cmd = { "ast-grep", "lsp" },
-			single_file_support = false,
-			root_dir = lspconfig.util.root_pattern('sgconfig.yml');
-		}
-	}
+	})
 end
 
 -- function SetupArduinoLS()
@@ -146,6 +135,13 @@ function SetupAllLSP()
 
 	-- SetupSourcekit()
 	-- SetupAstGrep();
+
+    vim.lsp.config("tinymist", {
+        settings = {
+                formatterMode = "typstyle",
+                exportPdf = "onType",
+                semanticTokens = "disable"
+        }})
 
 end
 

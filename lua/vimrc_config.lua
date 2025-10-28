@@ -10,7 +10,8 @@ vim.cmd([[
 	syntax enable
 	set hlsearch
 	set termguicolors
-	colorscheme catppuccin-mocha
+
+	colorscheme catppuccin-frappe
 
     set colorcolumn=120
 	set signcolumn=yes:2
@@ -27,6 +28,8 @@ vim.cmd([[
     set cursorline
     set number
 	set relativenumber
+
+    set showmatch
 
     set scrolloff=15
 	

@@ -92,7 +92,7 @@ require("lazy").setup({
 		},
 	},
 },
-'RRethy/vim-illuminate',
+-- 'RRethy/vim-illuminate',
 -- File Browsing
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
@@ -108,11 +108,11 @@ require("lazy").setup({
 -- },
 -----------------------
 -- Typing
-{
-	'windwp/nvim-autopairs',
-	event = "InsertEnter",
-	opts = {} -- this is equalent to setup({}) function
-},
+-- {
+-- 	'windwp/nvim-autopairs',
+-- 	event = "InsertEnter",
+-- 	opts = {} -- this is equalent to setup({}) function
+-- },
 'tpope/vim-surround',
 'majutsushi/tagbar',
 'tpope/vim-commentary',
@@ -157,7 +157,7 @@ require("lazy").setup({
 { 'stevearc/overseer.nvim' },
 { 'stevearc/dressing.nvim' },
 { 'MeanderingProgrammer/render-markdown.nvim' },
-{ 'HiPhish/rainbow-delimiters.nvim' },
+-- { 'HiPhish/rainbow-delimiters.nvim' },
 {
     "chentoast/marks.nvim",
     event = "VeryLazy",
@@ -170,6 +170,12 @@ require("lazy").setup({
 { 'lewis6991/gitsigns.nvim' },
 { 'sindrets/diffview.nvim' },
 { 'ThePrimeagen/refactoring.nvim' },
+{
+  'chomosuke/typst-preview.nvim',
+  lazy = false, -- or ft = 'typst'
+  version = '1.*',
+  opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+},
 
 -- END PLUGINS LIST
 

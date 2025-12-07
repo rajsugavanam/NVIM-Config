@@ -19,7 +19,6 @@ require("lazynvim.lazynvimsetup")
 
 require("vimrc_config")
 
-require("pairsconfig")
 require("cmp.cmpconfig")
 
 require("language.lsp")
@@ -32,7 +31,6 @@ require("treesitterconfig")
 
 require("keybindings.bindings")
 
-require("barbar.barbarconfig")
 require("presence.presenceconfig")
 
 require("nvim_dap")

@@ -1,5 +1,3 @@
-require("keybindings.keybind_functions")
-
 local keybindings = {}
 
 -- No-highlight, exit terminal with esc.

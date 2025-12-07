@@ -11,7 +11,7 @@ vim.cmd([[
 	set hlsearch
 	set termguicolors
 
-	colorscheme catppuccin-frappe
+	colorscheme kanagawa-wave
 
     set colorcolumn=120
 	set signcolumn=yes:2

@@ -9,7 +9,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {silent=true})
 -- Additional LSP-based keybindings.
 local opts = { noremap=true, silent=true }
 -- vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '<Leader>e', "<cmd>silent Lspsaga show_line_diagnostics<CR>", opts)
+-- vim.keymap.set('n', '<Leader>e', "<cmd>silent Lspsaga show_line_diagnostics<CR>", opts)
 -- vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 -- vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '[g', "<cmd>silent Lspsaga diagnostic_jump_prev<CR>", opts)

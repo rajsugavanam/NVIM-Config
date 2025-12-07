@@ -1,5 +1,4 @@
 require("lazy").setup({
-
 {
 	"folke/tokyonight.nvim",
 	lazy = false,
@@ -15,23 +14,12 @@ require("lazy").setup({
         transparent_background = false,
     },
 },
--- { "EdenEast/nightfox.nvim" },
 "sainnhe/gruvbox-material",
--- {
--- 	"rose-pine/neovim",
--- 	name = "rose-pine",
--- 	config = function ()
--- 	end
--- },
--- { "sainnhe/everforest" },
--- { "rebelot/kanagawa.nvim" },
--- 'marko-cerovac/material.nvim',
--- Language Support
+{ "rebelot/kanagawa.nvim" },
 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
 'hrsh7th/cmp-nvim-lsp',
 { "nvimdev/lspsaga.nvim" },
--- 'hrsh7th/cmp-nvim-lsp-signature-help',
 {
 	"ray-x/lsp_signature.nvim",
 	event = "VeryLazy",
@@ -49,21 +37,15 @@ require("lazy").setup({
 'hrsh7th/cmp-cmdline',
 "hrsh7th/nvim-cmp",
 "onsails/lspkind.nvim",
-
--- TODO: Remove when fix is implemented.
 "mason-org/mason.nvim",
 "mason-org/mason-lspconfig.nvim",
 'rshkarin/mason-nvim-lint',
 "mfussenegger/nvim-lint",
-
 "SirVer/ultisnips",
 "quangnguyen30192/cmp-nvim-ultisnips",
 "honza/vim-snippets",
--- *INSTALL PYNVIM*
-
 "neovim/nvim-lspconfig",
 "mfussenegger/nvim-jdtls",
--- { 'nvim-java/nvim-java' },
 {
     "lervag/vimtex",
     lazy = false,
@@ -79,41 +61,39 @@ require("lazy").setup({
         }
     end
 },
-
 { 'mfussenegger/nvim-dap' },
-
--- Visual
-{
-	"lukas-reineke/indent-blankline.nvim",
-	main = "ibl",
-	opts = {
-		exclude = {
-			filetypes = { "dashboard" }
-		},
-	},
-},
--- 'RRethy/vim-illuminate',
--- File Browsing
 'nvim-lua/plenary.nvim',
 {'nvim-telescope/telescope.nvim', version='0.1.4'},
-
--- FILE TREE - PICK ONE
 { "nvim-tree/nvim-tree.lua" },
--- {
---	   "nvim-telescope/telescope-file-browser.nvim",
---	   requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
---	   config = function()
---		   require("telescope").load_extension "file_browser"
---	   end
--- },
------------------------
--- Typing
--- {
--- 	'windwp/nvim-autopairs',
--- 	event = "InsertEnter",
--- 	opts = {} -- this is equalent to setup({}) function
--- },
-'tpope/vim-surround',
+{
+	'windwp/nvim-autopairs',
+	event = "InsertEnter",
+    opts = {
+        fast_wrap = {
+            map = '<M-e>',
+            chars = { '{', '[', '(', '"', "'" },
+            pattern = [=[[%'%"%>%]%)%}%,]]=],
+            end_key = '$',
+            before_key = 'h',
+            after_key = 'l',
+            cursor_pos_before = true,
+            keys = 'qwertyuiopzxcvbnmasdfghjkl',
+            manual_position = true,
+            highlight = 'Search',
+            highlight_grey='Comment'
+        },
+    },
+},
+{
+    "kylechui/nvim-surround",
+    version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+},
 'majutsushi/tagbar',
 'tpope/vim-commentary',
 -- Airline
@@ -121,15 +101,6 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim',
   -- dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
 },
--- Social
--- {
--- 	'IogaMaster/neocord',
--- },
--- {
---     'vyfor/cord.nvim',
---     run = ':Cord update',
--- },
-
 {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -142,9 +113,6 @@ require("lazy").setup({
         -- configurations go here
     },
 },
--- {
---   "kkoomen/vim-doge",
--- },
 {
     "danymat/neogen",
     config = true,
@@ -176,18 +144,14 @@ require("lazy").setup({
   version = '1.*',
   opts = {}, -- lazy.nvim will implicitly calls `setup {}`
 },
-
--- END PLUGINS LIST
-
 },
 
--- Lazy setup options
+-- LAZY SETUP OPTIONS
 {
 	ui = {
 		border = "rounded",
 	},
-}
-)
+})
 
 vim.notify = require("notify")
 vim.notify.setup({
@@ -209,25 +173,3 @@ require('gitsigns').setup({
     sign_priority = 10000
 })
 require('refactoring').setup()
--- require('java').setup({
---     java_test = {
---         enable = false,
---     },
-
---     -- load java debugger plugins
---     java_debug_adapter = {
---         enable = false,
---     },
-
---     spring_boot_tools = {
---         enable = false,
---     },
-
---     jdk = {
---         -- install jdk using mason.nvim
---         auto_install = false,
---     },
---     notifications = {
---         dap = false
---     },
--- })

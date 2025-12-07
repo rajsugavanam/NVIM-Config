@@ -25,7 +25,9 @@ require("cmp.cmpconfig")
 require("language.lsp")
 require("language.lspsagaconfig")
 
-require("lualineconfig")
+if vim.fn.exists('g:vscode') == 0 then
+    require("lualineconfig")
+end
 require("treesitterconfig")
 
 require("keybindings.bindings")

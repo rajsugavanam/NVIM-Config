@@ -54,7 +54,7 @@ vim.keymap.set('n', '<space>F', function() vim.lsp.buf.format { async = true } e
 local builtin = require('telescope.builtin')
 vim.keymap.set("n", "<Leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<Leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<Leader>gf", "<cmd>Lspsaga finder<CR>", {})
+-- vim.keymap.set("n", "<Leader>gf", "<cmd>Lspsaga finder<CR>", {})
 vim.keymap.set("n", "<Leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<Leader>h", builtin.keymaps, {})
 

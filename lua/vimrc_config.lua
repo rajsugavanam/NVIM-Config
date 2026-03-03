@@ -11,7 +11,7 @@ vim.cmd([[
 	set hlsearch
 	set termguicolors
 
-	colorscheme kanagawa-wave
+	colorscheme gruvbox-material
 
     set colorcolumn=120
 	set signcolumn=yes:2

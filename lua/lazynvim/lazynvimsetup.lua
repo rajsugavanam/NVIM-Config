@@ -55,8 +55,10 @@ require("lazy").setup({
         vim.g.vimtex_compiler_latexmk = {
             executable = 'latexmk',
             options = {
+                '-xelatex',
                 '-pdf',
                 '-pvc',
+                '-synctex=1'
             },
         }
     end
@@ -138,12 +140,6 @@ require("lazy").setup({
 { 'lewis6991/gitsigns.nvim' },
 { 'sindrets/diffview.nvim' },
 { 'ThePrimeagen/refactoring.nvim' },
-{
-  'chomosuke/typst-preview.nvim',
-  lazy = false, -- or ft = 'typst'
-  version = '1.*',
-  opts = {}, -- lazy.nvim will implicitly calls `setup {}`
-},
 },
 
 -- LAZY SETUP OPTIONS

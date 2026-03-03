@@ -19,18 +19,21 @@ require("lazynvim.lazynvimsetup")
 
 require("vimrc_config")
 
-require("cmp.cmpconfig")
-
-require("language.lsp")
-require("language.lspsagaconfig")
-
 if vim.fn.exists('g:vscode') == 0 then
     require("lualineconfig")
+    require("language.lsp")
+    require("language.lspsagaconfig")
+    require("cmp.cmpconfig")
+    require("treesitterconfig")
+else
+    vim.cmd([[
+        set relativenumber
+    ]])
 end
-require("treesitterconfig")
+
 
 require("keybindings.bindings")
 
-require("presence.presenceconfig")
+-- require("presence.presenceconfig")
 
-require("nvim_dap")
+-- require("nvim_dap")
